@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linimasa & Kuis: Kisah Tiga Takhta</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat font Libre Baskerville -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Memuat html2canvas untuk fitur unduh hasil -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        /* Mengatur font default dan scroll-behavior */
+        body {
+            font-family: 'Libre Baskerville', serif;
+            scroll-behavior: smooth;
+        }
+        
+        /* Styling tambahan untuk kuis */
+        .quiz-option {
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+        .quiz-option.selected {
+            background-color: #fef3c7; /* amber-100 */
+            border-color: #f59e0b; /* amber-500 */
+        }
+        .quiz-option:hover {
+            background-color: #fefce8; /* amber-50 */
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-gray-900">
+
+    <!-- Header -->
+    <header class="text-center py-12 md:py-16 px-4 bg-amber-100 shadow-md">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3">Kisah Tiga Takhta</h1>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+            Sebuah linimasa novel sejarah dari fajar Demak, singgasana Pajang, hingga terbelahnya Mataram Islam.
+        </p>
+    </header>
+
+    <!-- Kontainer Linimasa Utama -->
+    <main class="container mx-auto max-w-4xl p-4 md:p-8">
+        
+        <!-- Garis Waktu: Wrapper -->
+        <div class="relative border-l-4 border-amber-400 ml-6 md:ml-12 pt-4">
+
+            <!-- PROLOG -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-gray-500 rounded-full"></div>
+                <div class="ml-8 md:ml-12 p-6 bg-amber-50 rounded-lg shadow-lg">
+                    <span class="text-sm font-semibold text-gray-500 uppercase">PROLOG</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">c. 1478: Senja di Majapahit</h3>
+                    <p class="text-gray-700">Imperium Majapahit rapuh. Di pesisir utara, Raden Patah, putra Brawijaya V, mengkonsolidasikan kekuatan di bawah panji keyakinan baru.</p>
+                </div>
+            </div>
+
+            <!-- BABAK I: FAJAR DI BINTORO (DEMAK) -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-blue-400 rounded-full"></div>
+                <div class="ml-8 md:ml-12">
+                    <span class="text-sm font-semibold text-blue-600 ml-6 md:ml-0">BABAK I: FAJAR DI BINTORO</span>
+                    <div class="p-6 bg-blue-50 rounded-lg shadow-lg mt-2">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">c. 1500: Berdirinya Demak</h3>
+                        <p class="text-gray-700">Raden Patah (Sultan Alam Akbar al-Fatah) mendeklarasikan Demak sebagai kerajaan Islam merdeka. Masjid Agung Demak dibangun sebagai pusat peradaban baru.</p>
+                    </div>
+                    <div class="p-6 bg-blue-50 rounded-lg shadow-lg mt-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">c. 1521 - 1546: Puncak Keemasan</h3>
+                        <p class="text-gray-700">Di bawah Sultan Trenggana, Demak menaklukkan sisa Majapahit dan merebut Sunda Kelapa (Jayakarta) pada 1527. Demak menjadi penguasa absolut Jawa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BABAK II: TRAGEDI & DARAH (KERUNTUHAN DEMAK) -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-red-400 rounded-full"></div>
+                <div class="ml-8 md:ml-12">
+                    <span class="text-sm font-semibold text-red-600 ml-6 md:ml-0">BABAK II: TRAGEDI & DARAH</span>
+                    <div class="p-6 bg-red-50 rounded-lg shadow-lg mt-2">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">1546: Kematian Sultan Trenggana</h3>
+                        <p class="text-gray-700">Sultan Trenggana tewas saat pengepungan Panarukan. Takhta yang kosong memicu perebutan kekuasaan yang brutal.</p>
+                    </div>
+                    <div class="p-6 bg-red-50 rounded-lg shadow-lg mt-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">c. 1549: Perang Saudara</h3>
+                        <p class="text-gray-700">Arya Penangsang dari Jipang membunuh Sunan Prawoto (raja baru) dan mengobarkan perang. Kerajaan Demak tenggelam dalam kekacauan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BABAK III: SANG PENENGAH (LAHIRNYA PAJANG) -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-green-400 rounded-full"></div>
+                <div class="ml-8 md:ml-12">
+                    <span class="text-sm font-semibold text-green-600 ml-6 md:ml-0">BABAK III: SANG PENENGAH</span>
+                    <div class="p-6 bg-green-50 rounded-lg shadow-lg mt-2">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">c. 1549: Munculnya Jaka Tingkir</h3>
+                        <p class="text-gray-700">Jaka Tingkir, Adipati Pajang dan menantu Trenggana, mengalahkan Arya Penangsang dengan bantuan Ki Ageng Pemanahan dan Sutawijaya.</p>
+                    </div>
+                    <div class="p-6 bg-green-50 rounded-lg shadow-lg mt-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">c. 1550: Berdirinya Pajang</h3>
+                        <p class="text-gray-700">Jaka Tingkir memindahkan pusaka Demak ke Pajang, menandai berakhirnya era pesisir. Ia mengambil gelar Sultan Hadiwijaya. Kekuasaan bergeser ke pedalaman.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BABAK IV: BENIH DI ALAS MENTOK (CIKAL BAKAL MATARAM) -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-yellow-400 rounded-full"></div>
+                <div class="ml-8 md:ml-12">
+                    <span class="text-sm font-semibold text-yellow-600 ml-6 md:ml-0">BABAK IV: BENIH DI ALAS MENTOK</span>
+                    <div class="p-6 bg-yellow-50 rounded-lg shadow-lg mt-2">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">c. 1556: Hadiah Alas Mentaok</h3>
+                        <p class="text-gray-700">Sebagai hadiah atas jasanya, Ki Ageng Pemanahan (dan putranya, Sutawijaya) diberi tanah hutan angker Alas Mentaok oleh Sultan Hadiwijaya. Mereka membabat hutan dan menamainya 'Mataram'.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BABAK V: SANG ARSITEK (MATARAM) -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-purple-400 rounded-full"></div>
+                <div class="ml-8 md:ml-12">
+                    <span class="text-sm font-semibold text-purple-600 ml-6 md:ml-0">BABAK V: SANG ARSITEK</span>
+                    <div class="p-6 bg-purple-50 rounded-lg shadow-lg mt-2">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">c. 1584: Panembahan Senopati</h3>
+                        <p class="text-gray-700">Setelah Pajang melemah, Sutawijaya memberontak dan mendeklarasikan kemerdekaan Mataram. Ia mengambil gelar Panembahan Senopati dan memulai era konsolidasi, membangun keraton di Kotagede.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BABAK VI: PUNCAK SEGALA PUNCAK (MATARAM) -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-blue-300 rounded-full"></div>
+                <div class="ml-8 md:ml-12">
+                    <span class="text-sm font-semibold text-blue-500 ml-6 md:ml-0">BABAK VI: PUNCAK SEGALA PUNCAK</span>
+                    <div class="p-6 bg-blue-100 rounded-lg shadow-lg mt-2">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">1613 - 1645: Era Sultan Agung</h3>
+                        <p class="text-gray-700">Cucu Senopati, Sultan Agung Hanyokrokusumo , membawa Mataram ke puncak kejayaan. Ia menyatukan hampir seluruh Jawa di bawah satu panji.</p>
+                    </div>
+                    <div class="p-6 bg-blue-100 rounded-lg shadow-lg mt-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">1628 - 1629: Tragedi Batavia</h3>
+                        <p class="text-gray-700">Dua kali Sultan Agung mengirim armada besar untuk mengusir VOC dari Batavia. Kedua serangan kolosal ini gagal, menandai batas ekspansi Mataram.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BABAK VII: INTRIK DAN INTERVENSI (MATARAM) -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-red-300 rounded-full"></div>
+                <div class="ml-8 md:ml-12">
+                    <span class="text-sm font-semibold text-red-500 ml-6 md:ml-0">BABAK VII: INTRIK DAN INTERVENSI</span>
+                    <div class="p-6 bg-red-100 rounded-lg shadow-lg mt-2">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">1646 - 1677: Amangkurat I & Pemberontakan</h3>
+                        <p class="text-gray-700">Putra Agung, Amangkurat I, memerintah dengan kejam dan paranoid. Ia berdamai dengan VOC dan memicu kebencian. Pemberontakan Trunojoyo dari Madura meletus.</p>
+                    </div>
+                    <div class="p-6 bg-red-100 rounded-lg shadow-lg mt-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">1677: Runtuhnya Keraton Plered</h3>
+                        <p class="text-gray-700">Pasukan Trunojoyo menjarah Keraton Plered. Amangkurat I melarikan diri dan wafat dalam pelarian. Inilah awal intervensi VOC.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BABAK VIII: TAKHTA YANG RAPUH (MATARAM) -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-orange-400 rounded-full"></div>
+                <div class="ml-8 md:ml-12">
+                    <span class="text-sm font-semibold text-orange-600 ml-6 md:ml-0">BABAK VIII: TAKHTA YANG RAPUH</span>
+                    <div class="p-6 bg-orange-100 rounded-lg shadow-lg mt-2">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">c. 1680: Utang Budi pada VOC</h3>
+                        <p class="text-gray-700">Amangkurat II naik takhta dengan bantuan VOC untuk mengalahkan Trunojoyo. Sebagai imbalan, VOC mendapat hak monopoli dan bayaran biaya perang. Mataram kini "berutang".</p>
+                    </div>
+                    <div class="p-6 bg-orange-100 rounded-lg shadow-lg mt-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Awal 1700-an: Perang Suksesi Jawa</h3>
+                        <p class="text-gray-700">Era perang saudara (Perang Suksesi I, II, III). Kakak melawan adik, paman melawan keponakan. VOC bertindak sebagai "wasit" yang memecah belah dan selalu diuntungkan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BABAK IX: PALIHAN NAGARI (AKHIR MATARAM) -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-gray-900 rounded-full"></div>
+                <div class="ml-8 md:ml-12">
+                    <span class="text-sm font-semibold text-gray-900 ml-6 md:ml-0">BABAK IX: PALIHAN NAGARI</span>
+                    <div class="p-6 bg-gray-200 rounded-lg shadow-lg mt-2">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">1749 - 1755: Pemberontakan Terbesar</h3>
+                        <p class="text-gray-700">Dipicu "Geger Pecinan", Pangeran Mangkubumi dan Raden Mas Said mengobarkan perlawanan hebat yang nyaris menghancurkan Mataram dan VOC.</p>
+                    </div>
+                    <div class="p-6 bg-gray-200 rounded-lg shadow-lg mt-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">13 Februari 1755: Perjanjian Giyanti</h3>
+                        <p class="text-gray-700">Lelah berperang, VOC menggunakan siasat Divide et Impera. Di atas meja perundingan, Kerajaan Mataram Islam secara resmi DIBELAH DUA.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EPILOG -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-gray-500 rounded-full"></div>
+                <div class="ml-8 md:ml-12 p-6 bg-amber-50 rounded-lg shadow-lg">
+                    <span class="text-sm font-semibold text-gray-500 uppercase">EPILOG</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Lahirnya Dua Takhta</h3>
+                    <p class="text-gray-700">Imperium itu runtuh. <br/>
+                        1. <strong>Kasunanan Surakarta Hadiningrat</strong> (dipimpin Pakubuwono III).<br/>
+                        2. <strong>Kasultanan Ngayogyakarta Hadiningrat</strong> (dipimpin Pangeran Mangkubumi yang bergelar Sultan Hamengkubuwono I).<br/>
+                        Novel Mataram telah berakhir, namun warisannya hidup di dua jantung budaya Jawa.</p>
+                </div>
+            </div>
+
+        </div> <!-- Akhir dari wrapper linimasa -->
+    </main>
+
+    <!-- Tombol Mulai Kuis -->
+    <section class="container mx-auto max-w-4xl p-4 md:p-8 text-center">
+        <button id="startQuizBtn" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-10 rounded-lg shadow-lg text-xl transition-transform transform hover:scale-105">
+            Mulai Kuis Sejarah
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-10 text-gray-600 bg-amber-100 mt-12">
+        <p>Sebuah visualisasi sejarah berdasarkan narasi.</p>
+    </footer>
+
+    <!-- Modal: Informasi Pengguna -->
+    <div id="userInfoModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-40">
+        <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 text-center">Informasi Peserta</h2>
+            <form id="userInfoForm">
+                <div class="mb-4">
+                    <label for="userName" class="block text-sm font-bold text-gray-700 mb-2">Nama Lengkap:</label>
+                    <input type="text" id="userName" name="userName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                </div>
+                <div class="mb-6">
+                    <label for="userClass" class="block text-sm font-bold text-gray-700 mb-2">Kelas:</label>
+                    <input type="text" id="userClass" name="userClass" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                </div>
+                <button id="submitInfoBtn" type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-lg transition-transform transform hover:scale-105">
+                    Mulai
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Kuis -->
+    <div id="quizModal" class="hidden fixed inset-0 bg-amber-50 p-4 md:p-8 overflow-y-auto z-50">
+        <div class="container mx-auto max-w-3xl">
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-2xl">
+                <div class="flex justify-between items-center mb-4">
+                    <span id="questionCounter" class="text-sm font-semibold text-gray-600">Soal 1 dari 20</span>
+                    <span id="quizTimer" class="text-sm font-bold text-red-600"></span> <!-- Timer bisa ditambahkan di sini -->
+                </div>
+                
+                <h2 id="questionText" class="text-xl md:text-2xl font-bold text-gray-900 mb-6" style="line-height: 1.6;">
+                    Pertanyaan akan dimuat di sini...
+                </h2>
+                
+                <div id="optionsContainer" class="space-y-4">
+                    <!-- Opsi jawaban akan di-generate oleh JavaScript -->
+                </div>
+                
+                <div class="mt-8 flex justify-between">
+                    <button id="prevQuestionBtn" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg text-lg transition-transform transform hover:scale-105 hidden">
+                        Sebelumnya
+                    </button>
+                    <button id="nextQuestionBtn" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg text-lg transition-transform transform hover:scale-105">
+                        Selanjutnya
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Hasil Kuis -->
+    <div id="resultModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-40">
+        <div class="w-full max-w-lg">
+            <!-- ID "resultCard" digunakan untuk tangkapan layar -->
+            <div id="resultCard" class="bg-white p-8 rounded-lg shadow-2xl text-center">
+                <h2 class="text-3xl font-bold mb-4 text-gray-900">Kuis Selesai!</h2>
+                <p class="text-lg text-gray-700 mb-2">Hasil untuk:</p>
+                <p id="resultName" class="text-2xl font-bold text-amber-700"></p>
+                <p id="resultClass" class="text-md text-gray-600 mb-6"></p>
+                
+                <p class="text-lg text-gray-700 mb-2">Skor Akhir Anda:</p>
+                <h1 id="resultScore" class="text-7xl font-extrabold text-gray-900 mb-8">100</h1>
+            </div>
+            
+            <!-- Tombol-tombol di luar kartu hasil -->
+            <div class="mt-6 flex flex-col md:flex-row gap-4 justify-center">
+                <button id="downloadBtn" class="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-lg transition-transform transform hover:scale-105">
+                    Unduh Hasil (PNG)
+                </button>
+                <button id="waBtn" class="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-lg transition-transform transform hover:scale-105">
+                    Kirim ke WA
+                </button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // --- BANK SOAL (50 SOAL HOTS) ---
+    const quizData = [
+        // DEMAK (BAB I & II)
+        {
+            question: "Dampak strategis utama dari berdirinya Demak (c. 1500) yang membedakannya dari Majapahit paling tepat digambarkan sebagai....",
+            options: [
+                "A. Pergeseran total dari budaya agraris ke budaya maritim, meninggalkan sawah untuk perdagangan.",
+                "B. Integrasi kekuatan politik baru (Islam) dengan jaringan perdagangan pesisir yang sudah ada, menciptakan pusat kekuatan ekonomi-religius.",
+                "C. Penolakan total terhadap semua warisan budaya Majapahit, menyebabkan perang budaya yang berkepanjangan.",
+                "D. Fokus utama pada pembangunan militer darat untuk menaklukkan sisa-sisa kerajaan di pedalaman Jawa.",
+                "E. Isolasi diri dari pedagang asing untuk memurnikan ajaran Islam di Jawa."
+            ],
+            correct: 1
+        },
+        {
+            question: "Kematian Sultan Trenggana (1546) di Panarukan menjadi pemicu keruntuhan Demak yang begitu cepat karena....",
+            options: [
+                "A. Sultan Trenggana tidak memiliki putra mahkota yang sah, sehingga takhta langsung kosong.",
+                "B. Pasukan Demak seluruhnya hancur di Panarukan, membuat ibukota tidak terlindungi.",
+                "C. Kematiannya mengekspos rivalitas internal yang brutal (seperti Arya Penangsang) yang selama ini tertahan oleh otoritasnya yang kuat.",
+                "D. VOC langsung memanfaatkan kekosongan kekuasaan dan menyerang ibukota Demak.",
+                "E. Para Wali Songo menarik dukungan mereka dari Demak karena menganggap perang di Panarukan tidak sah."
+            ],
+            correct: 2
+        },
+        {
+            question: "Perang saudara antara Arya Penangsang dan Sunan Prawoto (c. 1549) memiliki implikasi yang lebih dalam bagi struktur kekuasaan di Jawa, yaitu....",
+            options: [
+                "A. Ini adalah pertama kalinya senjata api digunakan secara masif dalam perang di Jawa.",
+                "B. Konflik ini membuktikan bahwa garis keturunan langsung (Sunan Prawoto) tidak lagi menjamin stabilitas tanpa kekuatan militer personal yang kuat.",
+                "C. Ini menunjukkan perpecahan antara kubu yang pro-perdagangan (Arya Penangsang) dan kubu yang pro-agraris (Sunan Prawoto).",
+                "D. Ini adalah pemberontakan pertama yang didanai penuh oleh pedagang asing (Portugis).",
+                "E. Konflik ini secara permanen memisahkan Cirebon dari kekuasaan pusat Jawa."
+            ],
+            correct: 1
+        },
+        {
+            question: "Mengevaluasi era Sultan Trenggana (1521-1546), warisan pemerintahannya yang paling akurat bagi Demak adalah....",
+            options: [
+                "A. Ekspansi teritorial yang pesat namun gagal membangun sistem suksesi yang stabil, meninggalkan bom waktu konflik internal.",
+                "B. Fokus pada pembangunan spiritual (Masjid Demak) sambil mengabaikan ancaman militer dari kerajaan tetangga.",
+                "C. Keberhasilan diplomasi damai dengan semua kerajaan di Jawa, menciptakan perdamaian selama 25 tahun.",
+                "D. Kemunduran ekonomi karena pelarangan perdagangan dengan Portugis dan Tiongkok.",
+                "E. Konsolidasi internal yang kuat tetapi gagal total dalam melakukan ekspansi militer ke luar Jawa Tengah."
+            ],
+            correct: 0
+        },
+        {
+            question: "Dalam konteks runtuhnya Majapahit, fungsi strategis utama Masjid Agung Demak (c. 1500) selain sebagai tempat ibadah adalah....",
+            options: [
+                "A. Sebagai benteng pertahanan terakhir jika ibukota diserang oleh sisa-sisa pasukan Majapahit.",
+                "B. Sebagai pusat legitimasi politik dan simbol peradaban baru yang menggantikan otoritas spiritual Hindu-Buddha Majapahit.",
+                "C. Sebagai pasar dagang utama di pesisir utara, menyaingi pelabuhan Tuban dan Gresik.",
+                "D. Sebagai satu-satunya tempat pendidikan militer untuk pasukan khusus Demak (prajurit Soko Tatal).",
+                "E. Sebagai kediaman Raden Patah, menggabungkan fungsi istana dan tempat ibadah untuk efisiensi."
+            ],
+            correct: 1
+        },
+        // PAJANG (BAB III & IV)
+        {
+            question: "Perpindahan pusat kekuasaan dari Demak ke Pajang (c. 1550) oleh Jaka Tingkir memiliki makna simbolis dan geografis yang penting. Analisis yang paling tepat adalah....",
+            options: [
+                "A. Menandakan kegagalan total model kerajaan maritim (Demak) dan kembalinya Jawa pada tradisi agraris (Pajang) di pedalaman.",
+                "B. Upaya untuk melarikan diri dari wabah penyakit yang melanda kota-kota pelabuhan di pesisir utara.",
+                "C. Strategi untuk mendekati sumber daya alam utama (hutan dan gunung) yang tidak ada di pesisir.",
+                "D. Upaya untuk menyatukan kembali trah Majapahit (karena Jaka Tingkir adalah keturunan Brawijaya V) dengan trah Demak.",
+                "E. Perpindahan ini murni karena alasan pribadi, karena Pajang adalah tanah kelahiran Jaka Tingkir."
+            ],
+            correct: 0
+        },
+        {
+            question: "Pemberian Alas Mentaok (c. 1556) oleh Sultan Hadiwijaya kepada Ki Ageng Pemanahan sering dianggap sebagai 'kesalahan strategis' karena....",
+            options: [
+                "A. Alas Mentaok adalah satu-satunya sumber kayu jati berkualitas tinggi yang sangat dibutuhkan Pajang.",
+                "B. Hutan itu terlalu angker dan memakan banyak korban, sehingga melemahkan popularitas Sultan Hadiwijaya.",
+                "C. Sultan menempatkan seorang tokoh yang kuat dan ambisius (Pemanahan & Sutawijaya) di wilayah strategis yang sulit diawasi, yang kelak menjadi cikal bakal pesaingnya.",
+                "D. Pemberian itu melanggar perjanjian dengan Arya Penangsang, yang memicu perang baru.",
+                "E. Alas Mentaok adalah tanah sengketa dengan kerajaan Bali, yang menyeret Pajang ke dalam perang yang tidak perlu."
+            ],
+            correct: 2
+        },
+        {
+            question: "Kemenangan Jaka Tingkir atas Arya Penangsang (c. 1549) dengan bantuan Ki Ageng Pemanahan dan Sutawijaya memiliki implikasi politik jangka panjang, yaitu....",
+            options: [
+                "A. Jaka Tingkir harus membagi dua wilayah Demak dengan Ki Ageng Pemanahan.",
+                "B. Jaka Tingkir terpaksa menikahkan putrinya dengan Sutawijaya untuk mengikat aliansi.",
+                "C. Jaka Tingkir harus memberikan imbalan (berupa tanah/jabatan) yang memberdayakan sekutunya, menciptakan potensi ancaman baru di masa depan.",
+                "D. Jaka Tingkir harus tunduk pada keputusan dewan wali yang diketuai oleh Ki Ageng Pemanahan.",
+                "E. Tidak ada implikasi besar, karena utang budi dianggap lunas setelah perang selesai."
+            ],
+            correct: 2
+        },
+        {
+            question: "Membandingkan legitimasi kekuasaan: Raden Patah mendirikan Demak sebagai pewaris Brawijaya V (garis ibu) dan penyebar keyakinan baru. Jaka Tingkir mendirikan Pajang sebagai....",
+            options: [
+                "A. Penakluk murni yang merebut kekuasaan dengan kekuatan militer dari tangan Arya Penangsang.",
+                "B. Pewaris sah Demak (melalui pernikahan dengan putri Trenggana) dan juga memiliki darah Majapahit, menggabungkan dua legitimasi.",
+                "C. Pemimpin yang ditunjuk langsung oleh Wali Songo untuk mengakhiri kekacauan di Demak.",
+                "D. Pemberontak yang sukses melawan kekuasaan pesisir Demak yang dianggap korup.",
+                "E. Raja pertama yang dipilih secara demokratis oleh para adipati pesisir."
+            ],
+            correct: 1
+        },
+        {
+            question: "Perbedaan fundamental antara karakter kerajaan Demak dan kerajaan Pajang, seperti yang tersirat dalam linimasa, adalah....",
+            options: [
+                "A. Demak berfokus pada perdagangan maritim dan ekspansi militer eksternal, sementara Pajang berfokus pada konsolidasi agraris dan politik internal.",
+                "B. Demak adalah kerajaan yang damai dan religius, sementara Pajang adalah kerajaan militeristik dan agresif.",
+                "C. Demak sepenuhnya dikendalikan oleh pedagang Arab, sementara Pajang dikendalikan oleh bangsawan asli Jawa.",
+                "D. Demak menolak semua budaya pra-Islam, sementara Pajang mencoba menghidupkan kembali tradisi Majapahit secara utuh.",
+                "E. Tidak ada perbedaan signifikan; Pajang hanyalah kelanjutan langsung dari Demak di lokasi yang berbeda."
+            ],
+            correct: 0
+        },
+        // MATARAM AWAL (BAB V & VI)
+        {
+            question: "Pemberontakan Sutawijaya (Panembahan Senopati) terhadap Pajang (c. 1584) berhasil karena faktor utama....",
+            options: [
+                "A. Bantuan militer langsung dari VOC yang baru tiba di Banten.",
+                "B. Melemahnya Pajang setelah Sultan Hadiwijaya wafat dan terjadinya perebutan takhta internal di Pajang.",
+                "C. Kekuatan militer Mataram yang jauh lebih superior karena telah membangun pasukan di Alas Mentaok selama 30 tahun.",
+                "D. Dukungan dari sisa-sisa pengikut Arya Penangsang yang ingin membalas dendam pada Pajang.",
+                "E. Wabah penyakit yang melumpuhkan ibukota Pajang sehingga mudah ditaklukkan."
+            ],
+            correct: 1
+        },
+        {
+            question: "Sultan Agung (1613-1645) berhasil menyatukan hampir seluruh Jawa, sesuatu yang gagal dilakukan Demak dan Pajang. Strategi kunci yang membedakannya adalah....",
+            options: [
+                "A. Diplomasi pernikahan eksklusif; ia menikahi putri dari setiap adipati yang ditaklukkannya.",
+                "B. Kombinasi kekuatan militer yang brutal, birokrasi terpusat yang ketat, dan penggunaan legitimasi spiritual yang kuat (gelar Sultan).",
+                "C. Membangun angkatan laut terbesar di Asia Tenggara untuk mengontrol semua pelabuhan.",
+                "D. Bersekutu dengan VOC untuk mengalahkan kerajaan-kerajaan pesisir, lalu mengkhianati VOC.",
+                "E. Memindahkan ibukota setiap 10 tahun untuk mencegah adipati lokal membangun basis kekuatan."
+            ],
+            correct: 1
+        },
+        {
+            question: "Meskipun berada di puncak kekuasaan, Sultan Agung gagal mengusir VOC dari Batavia (1628-1629). Analisis penyebab kegagalan yang paling mendasar adalah....",
+            options: [
+                "A. Pengkhianatan internal oleh Amangkurat I, putranya sendiri, yang membocorkan rencana perang.",
+                "B. Pasukan Mataram kalah jumlah dan persenjataan dibandingkan pasukan VOC yang didatangkan dari Eropa.",
+                "C. Wabah penyakit (kolera) dan kegagalan logistik (lumbung padi dibakar) menghancurkan pasukan Mataram sebelum perang besar terjadi.",
+                "D. Badai topan menghancurkan seluruh armada laut Mataram saat berlayar ke Batavia.",
+                "E. Sultan Agung tiba-tiba menarik pasukannya karena mendapat wangsit untuk tidak melanjutkan perang."
+            ],
+            correct: 2
+        },
+        {
+            question: "Konsekuensi jangka panjang yang paling signifikan dari kegagalan Sultan Agung merebut Batavia adalah....",
+            options: [
+                "A. Mataram langsung runtuh dan terpecah belah setelah kegagalan tersebut.",
+                "B. Sultan Agung dipaksa turun takhta oleh para jenderalnya yang kecewa.",
+                "C. Ini menetapkan batas ekspansi Mataram dan membiarkan VOC membangun basis kekuatan permanen di Jawa, yang kelak menjadi 'duri dalam daging' bagi Mataram.",
+                "D. Mataram beralih fokus dari Jawa dan mencoba menaklukkan Sumatra dan Kalimantan.",
+                "E. Mataram langsung berdamai dan menjadi sekutu dagang utama VOC di Asia."
+            ],
+            correct: 2
+        },
+        {
+            question: "Pembangunan keraton di Kotagede (c. 1584) oleh Panembahan Senopati, di bekas Alas Mentaok, memiliki makna strategis....",
+            options: [
+                "A. Lokasinya di pesisir, memudahkan perdagangan dengan dunia luar.",
+                "B. Lokasinya di atas bukit, sebagai benteng alami yang mustahil ditembus musuh.",
+                "C. Lokasinya di pedalaman yang subur (agraris) namun relatif tersembunyi, memungkinkannya membangun kekuatan tanpa terdeteksi oleh Pajang pada awalnya.",
+                "D. Lokasinya adalah bekas ibukota Majapahit, untuk menyambungkan legitimasi sejarah.",
+                "E. Lokasinya dipilih secara acak berdasarkan tempat Ki Ageng Pemanahan pertama kali membuka hutan."
+            ],
+            correct: 2
+        },
+        // MATARAM AKHIR & VOC (BAB VII, VIII, IX, EPILOG)
+        {
+            question: "Pemerintahan Amangkurat I (1646-1677) sangat kontras dengan ayahnya, Sultan Agung. Pergeseran kebijakan fundamental pada masanya adalah....",
+            options: [
+                "A. Dari ekspansi militer eksternal (Sultan Agung) menjadi kebijakan damai total dan fokus pada pembangunan budaya (Amangkurat I).",
+                "B. Dari kebijakan anti-VOC (Sultan Agung) menjadi kebijakan pro-VOC dan fokus pada eliminasi oposisi internal dengan kekejaman (Amangkurat I).",
+                "C. Dari fokus agraris (Sultan Agung) menjadi fokus maritim, mencoba membangun kembali armada laut (Amangkurat I).",
+                "D. Dari pemerintahan terpusat (Sultan Agung) menjadi pemerintahan desentralisasi, memberikan kekuasaan penuh pada adipati (Amangkurat I).",
+                "E. Dari Islam puritan (Sultan Agung) menjadi sinkretisme ekstrem, menggabungkan ajaran Kejawen dan Hindu (Amangkurat I)."
+            ],
+            correct: 1
+        },
+        {
+            question: "Pemberontakan Trunojoyo (1677) bisa begitu sukses menjarah Keraton Plered dan membuat Amangkurat I wafat dalam pelarian karena....",
+            options: [
+                "A. Trunojoyo adalah pewaris sah takhta Mataram yang diasingkan.",
+                "B. Pasukan Trunojoyo dibantu oleh aliansi besar kerajaan Bali, Makassar, dan Banten.",
+                "C. Pemerintahan Amangkurat I yang kejam telah mengasingkan banyak bangsawan dan rakyat, sehingga dukungan internal untuk raja sangat lemah ketika diserang.",
+                "D. Trunojoyo menggunakan strategi 'bumi hangus' yang belum pernah dilihat sebelumnya di Jawa.",
+                "E. VOC memberikan dukungan penuh (senjata dan pasukan) kepada Trunojoyo untuk menggulingkan Amangkurat I."
+            ],
+            correct: 2
+        },
+        {
+            question: "Naiknya Amangkurat II (c. 1680) dengan bantuan VOC adalah 'awal dari akhir' kedaulatan Mataram karena....",
+            options: [
+                "A. Amangkurat II adalah raja pertama Mataram yang berdarah Belanda.",
+                "B. VOC menempatkan gubernur jenderal Belanda di dalam keraton Mataram untuk mengawasi raja.",
+                "C. Amangkurat II harus membayar biaya perang kepada VOC, memulai siklus utang dan konsesi teritorial/monopoli yang mengikat Mataram.",
+                "D. Amangkurat II dipaksa memindahkan ibukota ke Batavia di bawah pengawasan VOC.",
+                "E. Amangkurat II harus menyerahkan semua pusaka kerajaan kepada VOC sebagai jaminan."
+            ],
+            correct: 2
+        },
+        {
+            question: "Dalam Perang Suksesi Jawa (awal 1700-an), peran VOC sebagai 'wasit' dalam konteks strategi 'Divide et Impera' berarti....",
+            options: [
+                "A. VOC bertindak adil, mendamaikan pihak yang bertikai, dan memulihkan perdamaian di Jawa.",
+                "B. VOC menjadi penasihat spiritual yang netral bagi semua pangeran yang berperang.",
+                "C. VOC tidak ikut campur sama sekali dan hanya menonton dari Batavia.",
+                "D. VOC secara aktif mendukung satu pangeran melawan pangeran lain, kemudian meminta bayaran (wilayah/hak monopoli) dari pangeran yang mereka menangkan, sambil memastikan tidak ada yang menjadi terlalu kuat.",
+                "E. VOC menggabungkan semua pangeran yang bertikai untuk bersama-sama melawan kerajaan Banten."
+            ],
+            correct: 3
+        },
+        {
+            question: "Perjanjian Giyanti (1755) adalah kulminasi dari strategi 'Divide et Impera' VOC, dengan dampak paling fundamental yaitu....",
+            options: [
+                "A. Mengakhiri Perang Suksesi dan memulihkan kekuasaan Mataram di bawah satu raja yang kuat, Pakubuwono III.",
+                "B. Mengusir VOC dari Jawa Tengah untuk selamanya, berkat aliansi Pangeran Mangkubumi dan Raden Mas Said.",
+                "C. Secara resmi membelah kedaulatan Mataram menjadi dua (Surakarta dan Yogyakarta), secara efektif mengakhiri Mataram sebagai imperium tunggal dan menempatkan kedua kerajaan baru di bawah kendali VOC.",
+                "D. Menyatukan kembali Mataram dan Banten untuk melawan VOC di Batavia.",
+                "E. Memberikan seluruh wilayah pesisir utara Jawa kepada VOC, sementara Mataram tetap utuh di pedalaman."
+            ],
+            correct: 2
+        },
+        // PERBANDINGAN & KESELURUHAN (HOTS LANJUTAN)
+        {
+            question: "Menganalisis ketiga takhta (Demak, Pajang, Mataram), pola yang berulang terkait suksesi kekuasaan adalah....",
+            options: [
+                "A. Suksesi selalu berjalan damai dan mulus dari ayah ke anak laki-laki tertua.",
+                "B. Setiap perpindahan dinasti (Demak ke Pajang, Pajang ke Mataram) selalu didahului oleh konflik internal brutal dan pergeseran geografis (pesisir ke pedalaman).",
+                "C. Kekuasaan selalu berhasil direbut oleh menantu raja (seperti Jaka Tingkir).",
+                "D. Para Wali Songo selalu menjadi penentu akhir siapa yang berhak naik takhta.",
+                "E. Setiap dinasti baru selalu ditandai dengan penolakan total terhadap agama dan budaya dinasti sebelumnya."
+            ],
+            correct: 1
+        },
+        {
+            question: "Perbedaan utama antara sumber legitimasi Panembahan Senopati (Mataram) dengan Raden Patah (Demak) adalah....",
+            options: [
+                "A. Raden Patah mengandalkan garis keturunan Majapahit, sementara Senopati murni mengandalkan kekuatan militer.",
+                "B. Raden Patah mengandalkan dukungan Wali Songo, sementara Senopati mengandalkan mistisisme Kejawen (mitos Ratu Kidul) dan kekuatan militer.",
+                "C. Raden Patah adalah pedagang kaya, sementara Senopati adalah petani miskin.",
+                "D. Raden Patah ditunjuk oleh Portugis, sementara Senopati ditunjuk oleh Tiongkok.",
+                "E. Tidak ada perbedaan; keduanya mengklaim sebagai keturunan langsung Nabi Muhammad."
+            ],
+            correct: 1
+        },
+        {
+            question: "Kerajaan yang berbasis di pedalaman (Pajang dan Mataram) pada akhirnya terbukti lebih dominan daripada kerajaan berbasis pesisir (Demak) karena....",
+            options: [
+                "A. Pedalaman memiliki angkatan laut yang lebih kuat daripada pesisir.",
+                "B. Pesisir terlalu bergantung pada perdagangan internasional yang fluktuatif dan rawan blokade, sementara pedalaman mengontrol sumber daya agraris (pangan) yang vital.",
+                "C. Pesisir terlalu terbuka terhadap ide-ide baru (Islam), sementara pedalaman berhasil mempertahankan kemurnian ajaran Hindu-Buddha.",
+                "D. Pedalaman memiliki akses yang lebih baik ke teknologi senjata api dari Eropa.",
+                "E. Kerajaan pesisir selalu damai, sementara kerajaan pedalaman lebih suka berperang."
+            ],
+            correct: 1
+        },
+        {
+            question: "VOC beralih dari 'pedagang' menjadi 'pemain politik' (kingmaker) utama di Jawa pada saat....",
+            options: [
+                "A. Sejak pertama kali tiba (c. 1600), mereka langsung menunjuk raja-raja Jawa.",
+                "B. Saat kegagalan Sultan Agung di Batavia (1629), VOC membuktikan kekuatan militernya.",
+                "C. Saat mereka 'membantu' Amangkurat II naik takhta (c. 1680) dengan imbalan, secara efektif menjerat Mataram dalam utang dan intervensi.",
+                "D. Saat Perjanjian Giyanti (1755), ini adalah pertama kalinya mereka ikut campur.",
+                "E. VOC tidak pernah menjadi pemain politik; mereka murni berdagang sampai akhir."
+            ],
+            correct: 2
+        },
+        {
+            question: "Ironi terbesar dari hadiah 'Alas Mentaok' (c. 1556) yang diberikan Sultan Hadiwijaya adalah....",
+            options: [
+                "A. Hadiah itu ternyata tidak berpenghuni dan tidak bernilai sama sekali.",
+                "B. Hadiah yang dimaksudkan untuk 'mengamankan' seorang sekutu (Pemanahan) di tempat yang jauh, justru menjadi 'benih' yang tumbuh menjadi kerajaan (Mataram) yang meruntuhkan dinasti pemberi hadiah (Pajang).",
+                "C. Alas Mentaok ternyata adalah milik kerajaan Cirebon, yang memicu perang.",
+                "D. Di dalam hutan tersebut, Ki Ageng Pemanahan menemukan harta karun Majapahit yang membuatnya lebih kaya dari Sultan Hadiwijaya.",
+                "E. Hutan itu ternyata adalah pusat wabah penyakit yang membunuh Ki Ageng Pemanahan."
+            ],
+            correct: 1
+        },
+        {
+            question: "Peristiwa yang paling tepat dianggap sebagai 'titik tidak bisa kembali' (point of no return) bagi kedaulatan independen Mataram, yang mengarah pada Perjanjian Giyanti, adalah....",
+            options: [
+                "A. Pemberian Alas Mentaok (c. 1556), karena menciptakan pesaing.",
+                "B. Kegagalan Sultan Agung di Batavia (1629), karena menetapkan batas ekspansi.",
+                "C. Kematian Amangkurat I dan intervensi VOC untuk Amangkurat II (c. 1677-1680), karena memasukkan VOC ke dalam suksesi internal.",
+                "D. Pembangunan Keraton Kotagede (c. 1584), karena terlalu jauh dari laut.",
+                "E. Kematian Sultan Trenggana (1546), karena mengakhiri Demak."
+            ],
+            correct: 2
+        },
+        {
+            question: "Kesamaan utama antara metode konsolidasi Raden Patah (Demak) dan Panembahan Senopati (Mataram) adalah....",
+            options: [
+                "A. Keduanya mengandalkan diplomasi damai dan tidak pernah berperang.",
+                "B. Keduanya menggabungkan kekuatan militer dengan pembangunan simbol legitimasi baru (Masjid Demak oleh Patah, Keraton Kotagede oleh Senopati).",
+                "C. Keduanya adalah raja boneka yang dikendalikan penuh oleh Wali Songo.",
+                "D. Keduanya berfokus murni pada kekuatan maritim dan mengabaikan wilayah pedalaman.",
+                "E. Keduanya mengklaim sebagai reinkarnasi langsung dari raja terakhir Majapahit."
+            ],
+            correct: 1
+        },
+        {
+            question: "Peristiwa 'Geger Pecinan' (1740-an) yang memicu pemberontakan Pangeran Mangkubumi dan Raden Mas Said menunjukkan....",
+            options: [
+                "A. Aliansi yang kuat antara etnis Tionghoa dan bangsawan Jawa melawan VOC, menunjukkan musuh bersama dapat menyatukan kelompok yang berbeda.",
+                "B. Keberhasilan VOC dalam mengadu domba etnis Tionghoa dengan bangsawan Jawa.",
+                "C. Pertama kalinya Mataram menggunakan tentara bayaran dari Tiongkok.",
+                "D. Kelemahan Pangeran Mangkubumi yang tidak mampu mengendalikan pasukannya.",
+                "E. Dukungan penuh dari keraton Surakarta (Pakubuwono II) terhadap pemberontakan etnis Tionghoa."
+            ],
+            correct: 0
+        },
+        {
+            question: "Epilog 'Lahirnya Dua Takhta' (Surakarta dan Yogyakarta) memiliki warisan abadi bagi budaya Jawa, yaitu....",
+            options: [
+                "A. Terjadinya perang berkelanjutan antara kedua kota tersebut hingga hari ini.",
+                "B. Hilangnya seluruh budaya dan aksara Jawa karena digantikan oleh budaya Belanda.",
+                "C. Terciptanya dua pusat budaya (vorstenlanden) yang berbeda namun saling terkait, masing-masing melestarikan dan mengembangkan corak budayanya sendiri (gaya Solo dan gaya Jogja).",
+                "D. Yogyakarta menjadi pusat industri modern, sementara Surakarta tetap menjadi desa agraris.",
+                "E. Surakarta sepenuhnya mengadopsi budaya Islam puritan, sementara Yogyakarta mempertahankan tradisi Hindu-Buddha."
+            ],
+            correct: 2
+        },
+        {
+            question: "Sultan Agung (anti-VOC) tidak pernah mencoba merebut pelabuhan Demak (Jepara/Gresik) dari VOC, dan malah fokus ke Batavia. Hal ini karena....",
+            options: [
+                "A. Pelabuhan-pelabuhan itu sudah dihancurkan total oleh Amangkurat I.",
+                "B. VOC belum menguasai pelabuhan-pelabuhan itu; mereka masih dikuasai oleh adipati lokal yang semi-independen.",
+                "C. Batavia (Sunda Kelapa) adalah pelabuhan bersejarah yang direbut Demak (Fatahillah), merebutnya kembali memiliki nilai simbolis yang tinggi.",
+                "D. Sultan Agung menganggap Batavia, sebagai markas besar VOC, adalah 'kepala ular'. Menghancurkan Batavia berarti melumpuhkan seluruh operasi VOC di Jawa.",
+                "E. Pelabuhan lain terlalu dijaga ketat oleh aliansi Portugis dan Inggris."
+            ],
+            correct: 3
+        },
+        {
+            question: "Motif di balik kekejaman Amangkurat I (1646-1677) yang memicu pemberontakan Trunojoyo, selain paranoia, adalah....",
+            options: [
+                "A. Balas dendam pribadi karena ayahnya (Sultan Agung) lebih menyayangi adiknya.",
+                "B. Upaya brutal untuk meneruskan sentralisasi kekuasaan ayahnya, dengan menghancurkan semua oposisi (ulama, bangsawan senior) yang dianggap mengancam otoritas absolut raja.",
+                "C. Dia berada di bawah pengaruh obat-obatan yang diberikan oleh VOC.",
+                "D. Dia mencoba menerapkan hukum Islam (syariah) yang kaku, yang ditolak oleh masyarakat Jawa.",
+                "E. Dia adalah penganut Hindu garis keras yang mencoba menghapus Islam dari Mataram."
+            ],
+            correct: 1
+        },
+        {
+            question: "Perbedaan strategis utama antara 'Perang Saudara' pasca-Trenggana (c. 1549) dengan 'Perang Suksesi Jawa' (awal 1700-an) adalah....",
+            options: [
+                "A. Perang pasca-Trenggana murni konflik internal Jawa. Perang Suksesi melibatkan intervensi asing (VOC) sebagai penentu kemenangan.",
+                "B. Perang pasca-Trenggana menggunakan keris, sementara Perang Suksesi menggunakan tank dan pesawat tempur.",
+                "C. Perang pasca-Trenggana adalah perang agama (Islam vs Hindu), sementara Perang Suksesi adalah perang ekonomi.",
+                "D. Perang pasca-Trenggana dimenangkan oleh Jaka Tingkir, sementara Perang Suksesi tidak ada pemenangnya.",
+                "E. Tidak ada perbedaan, keduanya adalah konflik internal biasa."
+            ],
+            correct: 0
+        },
+        {
+            question: "Alasan yang paling TIDAK STRATEGIS bagi Raden Patah (c. 1500) memilih Demak sebagai pusat kerajaan barunya adalah....",
+            options: [
+                "A. Lokasinya di pesisir, ideal untuk perdagangan maritim dan koneksi dengan dunia Islam internasional.",
+                "B. Lokasinya adalah tanah rawa yang sulit dijangkau pasukan darat Majapahit dari pedalaman.",
+                "C. Lokasinya dekat dengan pusat spiritual baru (Wali Songo, seperti Sunan Kalijaga di Kadilangu).",
+                "D. Lokasinya adalah bekas ibukota kerajaan Majapahit, untuk mengambil legitimasi.",
+                "E. Lokasinya didukung oleh komunitas Tionghoa-Muslim yang sudah mapan di pesisir."
+            ],
+            correct: 3
+        },
+        {
+            question: "'Pusaka Demak' yang dipindahkan Jaka Tingkir ke Pajang (c. 1550) mewakili....",
+            options: [
+                "A. Seluruh harta benda dan emas milik kerajaan Demak.",
+                "B. Simbol legitimasi dan kedaulatan (regalia) yang mengesahkan Pajang sebagai penerus sah dari kekuasaan Demak.",
+                "C. Pasukan khusus Demak yang kini mengabdi pada Pajang.",
+                "D. Kitab suci dan catatan keagamaan yang ditulis oleh Wali Songo.",
+                "E. Para pengrajin dan seniman terbaik dari Demak."
+            ],
+            correct: 1
+        },
+        {
+            question: "Menganalisis pola keruntuhan: Demak runtuh karena konflik suksesi internal. Mataram (sebagai imperium) runtuh karena....",
+            options: [
+                "A. Konflik suksesi internal yang sama, namun kali ini dieksploitasi secara sistematis oleh kekuatan asing (VOC) melalui intervensi militer dan politik 'Divide et Impera'.",
+                "B. Bencana alam (letusan Gunung Merapi) yang menghancurkan ibukota dan lumbung padi.",
+                "C. Serangan dari aliansi kerajaan luar Jawa (Makassar, Banten, dan Aceh) secara bersamaan.",
+                "D. Pemberontakan rakyat (petani) secara besar-besaran karena pajak yang terlalu tinggi.",
+                "E. Kebangkrutan total karena gagalnya perdagangan rempah-rempah."
+            ],
+            correct: 0
+        },
+        {
+            question: "Jika Sultan Agung berhasil merebut Batavia (1629), skenario paling mungkin yang akan terjadi pada sejarah Jawa selanjutnya adalah....",
+            options: [
+                "A. VOC akan menyerah total dan meninggalkan Nusantara selamanya.",
+                "B. VOC akan memindahkan markasnya (misal ke Ambon atau Makassar) dan melanjutkan perdagangan, namun hegemoni Mataram di Jawa akan mutlak tanpa pesaing Eropa yang signifikan di pulaunya.",
+                "C. Mataram akan melanjutkan menaklukkan seluruh Asia Tenggara, dari Vietnam hingga Filipina.",
+                "D. Perang akan terus berlanjut, dan VOC akan kembali setahun kemudian dengan pasukan yang lebih besar dari Eropa dan menghancurkan Mataram.",
+                "E. Tidak akan ada perubahan besar; Batavia dianggap tidak penting secara strategis."
+            ],
+            correct: 1
+        },
+        {
+            question: "Konsekuensi jangka panjang dari pergeseran kekuasaan dari pesisir (Demak) ke pedalaman (Pajang/Mataram) terhadap karakter ekonomi-politik Jawa adalah....",
+            options: [
+                "A. Jawa menjadi lebih terbuka terhadap perdagangan internasional dan budaya asing.",
+                "B. Jawa menjadi lebih tertutup, fokus pada agraris, dan kultur feodalistik-agraris menguat, sementara kekuatan maritimnya (yang dulu dominan di era Demak) perlahan-lahan melemah.",
+                "C. Jawa menjadi pusat industri manufaktur terbesar di Asia.",
+                "D. Jawa terisolasi total dan tidak lagi memiliki hubungan dengan pulau-pulau lain di Nusantara.",
+                "E. Tidak ada konsekuensi; ekonomi tetap seimbang antara maritim dan agraris."
+            ],
+            correct: 1
+        },
+        {
+            question: "Hubungan antara Sultan Hadiwijaya (Pajang) dan Ki Ageng Pemanahan (cikal bakal Mataram) paling tepat digambarkan sebagai....",
+            options: [
+                "A. Tuan dan budak yang setia selamanya.",
+                "B. Dua sekutu setara yang membagi wilayah Jawa.",
+                "C. Raja (Hadiwijaya) dan bawahan/sekutu kunci (Pemanahan) yang hubungannya didasari utang budi, namun memiliki potensi rivalitas tersembunyi.",
+                "D. Musuh bebuyutan yang terpaksa berdamai oleh Wali Songo.",
+                "E. Guru (Pemanahan) dan murid (Hadiwijaya) dalam ilmu spiritual."
+            ],
+            correct: 2
+        },
+        {
+            question: "Perjanjian Giyanti (1755) secara efektif mengakhiri 'Kisah Tiga Takhta' (Demak, Pajang, Mataram Tunggal). Pernyataan yang paling akurat merangkum akhir dari era ini adalah....",
+            options: [
+                "A. Kemenangan mutlak budaya Jawa atas intervensi asing.",
+                "B. Runtuhnya kedaulatan politik imperium Jawa, yang terfragmentasi dan dilemahkan di bawah 'wasit' VOC, meskipun warisan budayanya tetap hidup dalam dua keraton baru.",
+                "C. Awal dari era baru di mana Mataram bersatu kembali dan berhasil mengusir VOC dari Jawa.",
+                "D. Transformasi Mataram dari kerajaan agraris menjadi kerajaan maritim modern.",
+                "E. Penggantian total elit bangsawan Jawa dengan administrator Belanda di Surakarta dan Yogyakarta."
+            ],
+            correct: 1
+        },
+        {
+            question: "Arya Penangsang (c. 1549) begitu berambisi merebut takhta Demak, bahkan sampai membunuh Sunan Prawoto, karena....",
+            options: [
+                "A. Dia dihasut oleh istrinya untuk merebut kekuasaan.",
+                "B. Dia menganggap ayahnya (Pangeran Surowiyoto) adalah pewaris yang lebih sah yang dibunuh atas perintah Sunan Prawoto (atau ayahnya, Trenggana), sehingga ini adalah balas dendam dan klaim hak.",
+                "C. Dia ingin memindahkan ibukota dari Demak ke Jipang.",
+                "D. Dia ingin menghapuskan Islam dan mengembalikan ajaran Majapahit.",
+                "E. Dia dibayar oleh Portugis untuk menciptakan kekacauan di Demak."
+            ],
+            correct: 1
+        },
+        {
+            question: "Signifikansi dari perebutan Sunda Kelapa (1527) oleh Fatahillah (utusan Demak) pada era Sultan Trenggana adalah....",
+            options: [
+                "A. Itu adalah perang pertama antara Demak dan Mataram.",
+                "B. Itu adalah upaya untuk menghentikan aliansi antara kerajaan Sunda (Pajajaran) dengan Portugis, yang dianggap sebagai ancaman strategis dan religius oleh Demak.",
+                "C. Itu adalah misi dagang murni untuk menguasai jalur lada.",
+                "D. Itu adalah kegagalan militer terbesar Demak.",
+                "E. Itu adalah perintah dari Wali Songo untuk menyebarkan Islam ke wilayah Sunda."
+            ],
+            correct: 1
+        },
+        {
+            question: "Runtuhnya Keraton Plered (1677) dan pelarian Amangkurat I memiliki dampak psikologis terbesar bagi kedaulatan Mataram, yaitu....",
+            options: [
+                "A. Meningkatkan kepercayaan diri Mataram karena raja berhasil selamat.",
+                "B. Membuktikan bahwa ibukota (pusat kosmos Jawa) tidak lagi 'suci' atau tak tersentuh, menghancurkan aura mistis kedaulatan raja secara drastis.",
+                "C. Menyebabkan perpecahan langsung antara Yogyakarta dan Surakarta.",
+                "D. Mendorong Mataram untuk membangun angkatan laut yang lebih kuat.",
+                "E. Tidak ada dampak psikologis; itu hanya kerugian militer biasa."
+            ],
+            correct: 1
+        },
+        {
+            question: "Cara VOC memastikan 'utang budi' Amangkurat II (c. 1680) benar-benar terbayar adalah....",
+            options: [
+                "A. Dengan meminta Amangkurat II mengirim upeti berupa hasil bumi setiap tahun tanpa kontrak yang jelas.",
+                "B. Dengan menandatangani perjanjian (kontrak) yang mengikat secara hukum, memberikan VOC hak monopoli dagang (misal candu, tekstil) dan kontrol atas pelabuhan-pelabuhan pesisir.",
+                "C. Dengan menyandera putra mahkota Amangkurat II di Batavia.",
+                "D. Dengan menempatkan pasukan VOC di setiap desa di wilayah Mataram.",
+                "E. Dengan memaksa Amangkurat II mengubah agama kerajaan menjadi Kristen Protestan."
+            ],
+            correct: 1
+        },
+        {
+            question: "VOC akhirnya memilih berdamai (Perjanjian Giyanti) untuk mengakhiri pemberontakan Pangeran Mangkubumi dan Raden Mas Said (1749-1755) karena....",
+            options: [
+                "A. VOC tiba-tiba menyadari kesalahannya dan ingin berdamai secara tulus.",
+                "B. Raja Belanda memerintahkan penghentian perang dengan alasan kemanusiaan.",
+                "C. Perang ini terlalu mahal (biaya dan korban jiwa), berkepanjangan, dan menguras kas VOC, sementara pemberontakan tidak kunjung padam. Diplomasi (memecah belah) menjadi pilihan yang lebih murah dan efektif.",
+                "D. Pangeran Mangkubumi berhasil merebut Batavia, memaksa VOC berunding.",
+                "E. Inggris tiba-tiba membantu Mangkubumi, sehingga VOC takut melawan aliansi itu."
+            ],
+            correct: 2
+        },
+        {
+            question: "Berikut ini yang BUKAN merupakan warisan dari era Sultan Agung (1613-1645) adalah....",
+            options: [
+                "A. Penyatuan sebagian besar wilayah Jawa di bawah satu kekuasaan terpusat.",
+                "B. Kegagalan menyingkirkan VOC dari Batavia, yang membiarkan ancaman masa depan tetap ada.",
+                "C. Sintesis budaya Islam-Jawa, termasuk pengembangan Kalender Jawa (Tahun Saka).",
+                "D. Dimulainya intervensi VOC dalam suksesi takhta Mataram.",
+                "E. Pembangunan infrastruktur dan konsolidasi birokrasi kerajaan."
+            ],
+            correct: 3
+        },
+        {
+            question: "Ironi dari julukan 'Puncak Segala Puncak' (Bab VI) untuk era Sultan Agung jika dikaitkan dengan era putranya, Amangkurat I (Bab VII) adalah....",
+            options: [
+                "A. Puncak kekuasaan yang dibangun Sultan Agung ternyata sangat rapuh dan langsung runtuh (karena paranoia internal dan pemberontakan) begitu dia wafat.",
+                "B. Era Sultan Agung sebenarnya tidak terlalu puncak, itu hanya propaganda Mataram.",
+                "C. Amangkurat I sebenarnya jauh lebih sukses daripada ayahnya dalam menaklukkan wilayah.",
+                "D. 'Puncak' itu diraih dengan bantuan VOC, yang kemudian ditagih pada masa Amangkurat I.",
+                "E. Era Sultan Agung adalah puncak kemunduran, sedangkan era Amangkurat I adalah puncak kejayaan."
+            ],
+            correct: 0
+        },
+        {
+            question: "Perbedaan motif utama antara pemberontakan Trunojoyo (1670-an) dan pemberontakan Pangeran Mangkubumi (1740-an) adalah....",
+            options: [
+                "A. Trunojoyo ingin mendirikan kerajaan Madura yang merdeka; Mangkubumi awalnya memperjuangkan haknya dalam takhta Mataram yang dianggap diatur secara tidak adil oleh VOC dan Pakubuwono.",
+                "B. Trunojoyo adalah pemberontakan petani murni; Mangkubumi adalah pemberontakan bangsawan.",
+                "C. Trunojoyo didukung penuh oleh VOC; Mangkubumi melawan VOC.",
+                "D. Trunojoyo ingin mengembalikan ajaran Hindu; Mangkubumi ingin menerapkan syariat Islam.",
+                "E. Trunojoyo menyerang dari pesisir; Mangkubumi menyerang dari pedalaman."
+            ],
+            correct: 0
+        },
+        {
+            question: "Melihat keseluruhan linimasa, tema yang paling konsisten muncul sebagai penyebab ketidakstabilan kerajaan-kerajaan Jawa adalah....",
+            options: [
+                "A. Ancaman konstan dari kerajaan di luar Jawa (Sumatra, Kalimantan).",
+                "B. Bencana alam seperti gempa bumi dan tsunami yang sering menghancurkan ibukota.",
+                "C. Kegagalan dalam sistem suksesi dan rivalitas internal antar bangsawan (perang saudara), yang menciptakan celah untuk intervensi eksternal.",
+                "D. Penolakan total terhadap perdagangan internasional, yang menyebabkan kebangkrutan.",
+                "E. Pemberontakan terus-menerus dari kalangan petani yang menuntut hak atas tanah."
+            ],
+            correct: 2
+        },
+        {
+            question: "Dari Prolog (c. 1478) hingga Epilog (1755), kesimpulan yang paling tepat menggambarkan pergeseran selama 277 tahun ini adalah....",
+            options: [
+                "A. Pergeseran dari imperium maritim (Majapahit/Demak) menjadi kerajaan agraris (Mataram), yang kemudian terfragmentasi oleh kekuatan dagang asing (VOC).",
+                "B. Perjalanan dari politeisme (Majapahit) ke monoteisme (Demak) lalu kembali ke politeisme (Mataram).",
+                "C. Transformasi dari kerajaan yang terpecah-pecah (Majapahit) menjadi satu imperium yang bersatu dan kokoh (Surakarta & Yogyakarta).",
+                "D. Era kedamaian panjang di bawah Majapahit, diikuti oleh era perang terus-menerus di bawah Demak, Pajang, dan Mataram.",
+                "E. Pergeseran dari dominasi budaya Jawa ke dominasi total budaya Belanda di semua aspek kehidupan."
+            ],
+            correct: 0
+        },
+    ];
+
+    // --- VARIABEL GLOBAL ---
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let selectedQuestions = [];
+    let selectedOption = null;
+    let userName = "";
+    let userClass = "";
+    let userAnswers = []; // <-- Variabel baru untuk menyimpan jawaban
+
+    // --- ELEMEN DOM ---
+    const startQuizBtn = document.getElementById('startQuizBtn');
+    const userInfoModal = document.getElementById('userInfoModal');
+    const userInfoForm = document.getElementById('userInfoForm');
+    const submitInfoBtn = document.getElementById('submitInfoBtn');
+    
+    const quizModal = document.getElementById('quizModal');
+    const questionCounter = document.getElementById('questionCounter');
+    const questionText = document.getElementById('questionText');
+    const optionsContainer = document.getElementById('optionsContainer');
+    const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+    const prevQuestionBtn = document.getElementById('prevQuestionBtn'); // <-- Elemen baru
+
+    const resultModal = document.getElementById('resultModal');
+    const resultCard = document.getElementById('resultCard'); // Untuk screenshot
+    const resultName = document.getElementById('resultName');
+    const resultClass = document.getElementById('resultClass');
+    const resultScore = document.getElementById('resultScore');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const waBtn = document.getElementById('waBtn');
+
+    // --- FUNGSI FULLSCREEN ---
+    const elem = document.documentElement;
+    function openFullscreen() {
+        // Fitur ini dibatasi oleh kebijakan izin di beberapa lingkungan (seperti iframe)
+        // console.log("Mencoba masuk mode layar penuh...");
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { // Firefox
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { // IE/Edge
+            elem.msRequestFullscreen();
+        }
+    }
+
+    function closeFullscreen() {
+        // console.log("Mencoba keluar dari mode layar penuh...");
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+            document.msExitFullscreen();
+        }
+    }
+
+    // --- FUNGSI KUIS UTAMA ---
+
+    // 1. Acak Soal
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // 2. Tampilkan Modal Info
+    startQuizBtn.addEventListener('click', () => {
+        userInfoModal.classList.remove('hidden');
+    });
+
+    // 3. Submit Info & Mulai Kuis
+    userInfoForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        userName = document.getElementById('userName').value;
+        userClass = document.getElementById('userClass').value;
+        
+        if (userName.trim() && userClass.trim()) {
+            userInfoModal.classList.add('hidden');
+            startQuiz();
+        }
+    });
+
+    // 4. Logika Memulai Kuis
+    function startQuiz() {
+        // Reset state
+        currentQuestionIndex = 0;
+        score = 0;
+        selectedOption = null;
+        
+        // Acak dan ambil 20 soal
+        selectedQuestions = shuffleArray([...quizData]).slice(0, 20);
+        userAnswers = new Array(selectedQuestions.length).fill(null); // <-- Inisialisasi array jawaban
+        
+        // Masuk fullscreen
+        // openFullscreen(); // <--- DINONAKTIFKAN KARENA PERMISSIONS POLICY
+        
+        // Tampilkan modal kuis
+        quizModal.classList.remove('hidden');
+        
+        // Muat soal pertama
+        loadQuestion();
+    }
+
+    // 5. Muat Soal
+    function loadQuestion() {
+        // Reset pilihan
+        selectedOption = userAnswers[currentQuestionIndex]; // <-- Muat jawaban yang tersimpan
+        
+        const question = selectedQuestions[currentQuestionIndex];
+        
+        questionCounter.innerText = `Soal ${currentQuestionIndex + 1} dari 20`;
+        questionText.innerText = question.question;
+        
+        optionsContainer.innerHTML = ""; // Kosongkan opsi sebelumnya
+        
+        question.options.forEach((option, index) => {
+            const optionElement = document.createElement('div');
+            optionElement.classList.add('quiz-option', 'p-4', 'border-2', 'border-gray-300', 'rounded-lg', 'cursor-pointer', 'text-gray-800');
+            optionElement.innerHTML = `${option}`; // <-- Menghapus duplikasi huruf
+            
+            optionElement.addEventListener('click', () => selectAnswer(optionElement, index));
+            
+            // Tampilkan jawaban yang sudah dipilih sebelumnya
+            if (index === selectedOption) {
+                optionElement.classList.add('selected', 'bg-amber-100', 'border-amber-500');
+            }
+            
+            optionsContainer.appendChild(optionElement);
+        });
+
+        // Update tombol
+        if (currentQuestionIndex === selectedQuestions.length - 1) {
+            nextQuestionBtn.innerText = "Selesai";
+        } else {
+            nextQuestionBtn.innerText = "Selanjutnya";
+        }
+        
+        // Tampilkan/sembunyikan tombol "Sebelumnya"
+        if (currentQuestionIndex === 0) {
+            prevQuestionBtn.classList.add('hidden');
+        } else {
+            prevQuestionBtn.classList.remove('hidden');
+        }
+    }
+
+    // 6. Pilih Jawaban
+    function selectAnswer(optionElement, index) {
+        // Hapus kelas 'selected' dari semua opsi
+        Array.from(optionsContainer.children).forEach(child => {
+            child.classList.remove('selected', 'bg-amber-100', 'border-amber-500');
+        });
+        
+        // Tambahkan kelas 'selected' ke yang diklik
+        optionElement.classList.add('selected', 'bg-amber-100', 'border-amber-500');
+        
+        // Simpan jawaban
+        selectedOption = index;
+        userAnswers[currentQuestionIndex] = index; // <-- Simpan jawaban ke array
+    }
+
+    // 7. Tombol Soal Selanjutnya
+    nextQuestionBtn.addEventListener('click', () => {
+        // Cek apakah jawaban sudah dipilih (opsional, bisa diaktifkan jika wajib diisi)
+        /*
+        if (userAnswers[currentQuestionIndex] === null) {
+            alert("Harap pilih jawaban sebelum melanjutkan.");
+            return; 
+        }
+        */
+
+        // Pindah ke soal berikutnya
+        if (currentQuestionIndex < selectedQuestions.length - 1) {
+            currentQuestionIndex++;
+            loadQuestion();
+        } else {
+            // Kuis selesai
+            showResults();
+        }
+    });
+    
+    // 7b. Tombol Soal Sebelumnya (BARU)
+    prevQuestionBtn.addEventListener('click', () => {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            loadQuestion();
+        }
+    });
+
+    // 8. Tampilkan Hasil
+    function showResults() {
+        // Keluar dari fullscreen
+        // closeFullscreen(); // <--- DINONAKTIFKAN KARENA PERMISSIONS POLICY
+        
+        // Sembunyikan modal kuis
+        quizModal.classList.add('hidden');
+        
+        // Hitung skor dari array jawaban
+        score = 0;
+        for (let i = 0; i < selectedQuestions.length; i++) {
+            if (userAnswers[i] === selectedQuestions[i].correct) {
+                score++;
+            }
+        }
+        
+        // Hitung skor akhir
+        const finalScore = Math.round((score / selectedQuestions.length) * 100);
+        
+        // Tampilkan data di modal hasil
+        resultName.innerText = userName;
+        resultClass.innerText = `Kelas: ${userClass}`;
+        resultScore.innerText = finalScore;
+        
+        // Tampilkan modal hasil
+        resultModal.classList.remove('hidden');
+    }
+
+    // --- FUNGSI TOMBOL HASIL ---
+
+    // 9. Unduh Hasil
+    downloadBtn.addEventListener('click', () => {
+        html2canvas(resultCard, { 
+            scale: 2, // Meningkatkan resolusi
+            useCORS: true 
+        }).then(canvas => {
+            const link = document.createElement('a');
+            link.download = `hasil_kuis_${userName.replace(/\s/g, '_')}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+    });
+
+    // 10. Kirim ke WA
+    waBtn.addEventListener('click', () => {
+        const finalScore = resultScore.innerText;
+        const waNumber = "6285888892326"; // Nomor tujuan
+        
+        // Format pesan
+        const waMessage = `Assalamu'alaikum Pak, berikut adalah hasil Kuis "Kerajaan Islam dari Demak hingga Maratam" saya:
+Nama: ${userName}
+Kelas: ${userClass}
+Skor: ${finalScore}
+
+Terima kasih.`;
+        
+        // Buat link
+        const waLink = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(waMessage)}`;
+        
+        // Buka di tab baru
+        window.open(waLink, '_blank');
+    });
+
+</script>
+
+</body>
+</html>
+
+
