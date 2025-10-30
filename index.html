@@ -298,7 +298,7 @@
         </div>
     </div>
 
-<script>
+    <script>
     // --- BANK SOAL (50 SOAL HOTS) ---
     const quizData = [
         // DEMAK (BAB I & II)
@@ -941,6 +941,12 @@
         score = 0;
         selectedOption = null;
         
+        // Hapus notifikasi force exit jika ada dari sesi sebelumnya
+        const oldNotification = document.getElementById('forceExitNotification');
+        if (oldNotification) {
+            oldNotification.remove();
+        }
+        
         // Acak dan ambil 20 soal
         selectedQuestions = shuffleArray([...quizData]).slice(0, 20);
         userAnswers = new Array(selectedQuestions.length).fill(null); // <-- Inisialisasi array jawaban
@@ -1101,9 +1107,42 @@ Skor: ${finalScore}`;
         window.open(waUrl, '_blank');
     });
 
+    // --- FUNGSI DETEKSI KELUAR FULLSCREEN ---
+    function handleFullscreenChange() {
+        const isFullscreen = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+        const isQuizActive = !quizModal.classList.contains('hidden');
+        const isResultVisible = !resultModal.classList.contains('hidden');
+
+        // Jika:
+        // 1. Tidak lagi dalam mode fullscreen (isFullscreen bernilai null)
+        // 2. Kuis sedang aktif (modal kuis terlihat)
+        // 3. Modal hasil BELUM terlihat (mencegah trigger ganda saat kuis selesai normal)
+        if (!isFullscreen && isQuizActive && !isResultVisible) {
+            
+            // Tambahkan notifikasi di kartu hasil
+            const notification = document.createElement('p');
+            notification.id = "forceExitNotification"; // ID untuk hapus di sesi berikutnya
+            notification.className = "text-red-600 font-bold mb-4 text-lg";
+            notification.innerText = "Sesi dihentikan karena keluar dari layar penuh.";
+            
+            // Cek agar tidak duplikat jika ter-trigger cepat
+            if (!document.getElementById('forceExitNotification')) {
+                resultCard.prepend(notification);
+            }
+
+            // Langsung hentikan kuis dan tampilkan hasil
+            showResults(); 
+        }
+    }
+
+    // Daftarkan event listener untuk memantau perubahan fullscreen
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('msfullscreenchange', handleFullscreenChange);
+
 </script>
 
 </body>
 </html>
-
 
