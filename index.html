@@ -1111,25 +1111,31 @@
             oldError.remove();
         }
 
-        // --- CEK SPLIT SCREEN BARU ---
-        // Cek jika window tidak dimaksimalkan.
-        // Toleransi 100px untuk taskbar, dll.
-        const isWindowed = (window.outerWidth < (screen.availWidth - 100)) || (window.outerHeight < (screen.availHeight - 100));
-        
-        // Cek jika browser sudah dalam mode fullscreen manual (F11)
-        const isAlreadyFullscreen = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+        // --- DETEKSI MOBILE BARU ---
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-        // Jika mode windowed (tidak maksimal) DAN tidak sedang fullscreen manual
-        if (isWindowed && !isAlreadyFullscreen) {
-            // Tampilkan pesan error di dalam modal
-            const errorMsg = document.createElement('p');
-            errorMsg.id = "splitScreenError";
-            errorMsg.className = "text-red-600 text-sm font-bold text-center mt-4";
-            errorMsg.innerText = "Mode split screen atau window terdeteksi.\nHarap maksimalkan window browser Anda dan coba lagi.";
+        // --- CEK SPLIT SCREEN (HANYA JIKA BUKAN MOBILE) ---
+        // Pengecekan ini tidak akurat di mobile, jadi kita lewati.
+        if (!isMobile) {
+            // Cek jika window tidak dimaksimalkan.
+            // Toleransi 100px untuk taskbar, dll.
+            const isWindowed = (window.outerWidth < (screen.availWidth - 100)) || (window.outerHeight < (screen.availHeight - 100));
             
-            // Sisipkan errorMsg setelah tombol submit
-            submitInfoBtn.insertAdjacentElement('afterend', errorMsg);
-            return; // Hentikan eksekusi
+            // Cek jika browser sudah dalam mode fullscreen manual (F11)
+            const isAlreadyFullscreen = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+
+            // Jika mode windowed (tidak maksimal) DAN tidak sedang fullscreen manual
+            if (isWindowed && !isAlreadyFullscreen) {
+                // Tampilkan pesan error di dalam modal
+                const errorMsg = document.createElement('p');
+                errorMsg.id = "splitScreenError";
+                errorMsg.className = "text-red-600 text-sm font-bold text-center mt-4";
+                errorMsg.innerText = "Mode split screen atau window terdeteksi.\nHarap maksimalkan window browser Anda dan coba lagi.";
+                
+                // Sisipkan errorMsg setelah tombol submit
+                submitInfoBtn.insertAdjacentElement('afterend', errorMsg);
+                return; // Hentikan eksekusi
+            }
         }
         // --- AKHIR CEK ---
 
