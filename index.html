@@ -31,6 +31,30 @@
         .quiz-option:hover {
             background-color: #fefce8; /* amber-50 */
         }
+
+        /* BARU: Styling untuk kartu linimasa yang bisa diklik */
+        .timeline-card {
+            cursor: pointer;
+        }
+        /* BARU: Efek hover pada kartu linimasa */
+        .timeline-card > div.ml-8:hover > div.shadow-lg {
+            /* * Menerapkan shadow-xl dan ring amber-500 saat di-hover.
+             * Kita target 'div.shadow-lg' di dalam 'div.ml-8'
+             */
+            --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+            --tw-ring-color: #f59e0b; /* amber-500 */
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            transform: translateY(-2px);
+            transition: all 0.2s ease-out;
+        }
+        
+        /* BARU: Styling untuk konten di dalam modal rincian */
+        .prose p {
+            margin-bottom: 1.25em; /* Jarak antar paragraf */
+            line-height: 1.7; /* Keterbacaan yang lebih baik */
+        }
     </style>
 </head>
 <body class="bg-amber-50 text-gray-900">
@@ -46,11 +70,11 @@
     <!-- Kontainer Linimasa Utama -->
     <main class="container mx-auto max-w-4xl p-4 md:p-8">
         
-        <!-- Garis Waktu: Wrapper -->
-        <div class="relative border-l-4 border-amber-400 ml-6 md:ml-12 pt-4">
+        <div class="relative border-l-4 border-amber-400 ml-6 md:ml-12 pt-4" id="timelineWrapper">
 
             <!-- PROLOG -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="prolog">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-gray-500 rounded-full"></div>
                 <div class="ml-8 md:ml-12 p-6 bg-amber-50 rounded-lg shadow-lg">
                     <span class="text-sm font-semibold text-gray-500 uppercase">PROLOG</span>
@@ -60,7 +84,8 @@
             </div>
 
             <!-- BABAK I: FAJAR DI BINTORO (DEMAK) -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="babak1">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-blue-400 rounded-full"></div>
                 <div class="ml-8 md:ml-12">
                     <span class="text-sm font-semibold text-blue-600 ml-6 md:ml-0">BABAK I: FAJAR DI BINTORO</span>
@@ -76,7 +101,8 @@
             </div>
 
             <!-- BABAK II: TRAGEDI & DARAH (KERUNTUHAN DEMAK) -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="babak2">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-red-400 rounded-full"></div>
                 <div class="ml-8 md:ml-12">
                     <span class="text-sm font-semibold text-red-600 ml-6 md:ml-0">BABAK II: TRAGEDI & DARAH</span>
@@ -92,7 +118,8 @@
             </div>
 
             <!-- BABAK III: SANG PENENGAH (LAHIRNYA PAJANG) -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="babak3">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-green-400 rounded-full"></div>
                 <div class="ml-8 md:ml-12">
                     <span class="text-sm font-semibold text-green-600 ml-6 md:ml-0">BABAK III: SANG PENENGAH</span>
@@ -108,7 +135,8 @@
             </div>
 
             <!-- BABAK IV: BENIH DI ALAS MENTOK (CIKAL BAKAL MATARAM) -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="babak4">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-yellow-400 rounded-full"></div>
                 <div class="ml-8 md:ml-12">
                     <span class="text-sm font-semibold text-yellow-600 ml-6 md:ml-0">BABAK IV: BENIH DI ALAS MENTOK</span>
@@ -120,7 +148,8 @@
             </div>
 
             <!-- BABAK V: SANG ARSITEK (MATARAM) -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="babak5">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-purple-400 rounded-full"></div>
                 <div class="ml-8 md:ml-12">
                     <span class="text-sm font-semibold text-purple-600 ml-6 md:ml-0">BABAK V: SANG ARSITEK</span>
@@ -132,7 +161,8 @@
             </div>
 
             <!-- BABAK VI: PUNCAK SEGALA PUNCAK (MATARAM) -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="babak6">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-blue-300 rounded-full"></div>
                 <div class="ml-8 md:ml-12">
                     <span class="text-sm font-semibold text-blue-500 ml-6 md:ml-0">BABAK VI: PUNCAK SEGALA PUNCAK</span>
@@ -148,7 +178,8 @@
             </div>
 
             <!-- BABAK VII: INTRIK DAN INTERVENSI (MATARAM) -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="babak7">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-red-300 rounded-full"></div>
                 <div class="ml-8 md:ml-12">
                     <span class="text-sm font-semibold text-red-500 ml-6 md:ml-0">BABAK VII: INTRIK DAN INTERVENSI</span>
@@ -164,7 +195,8 @@
             </div>
 
             <!-- BABAK VIII: TAKHTA YANG RAPUH (MATARAM) -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="babak8">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-orange-400 rounded-full"></div>
                 <div class="ml-8 md:ml-12">
                     <span class="text-sm font-semibold text-orange-600 ml-6 md:ml-0">BABAK VIII: TAKHTA YANG RAPUH</span>
@@ -180,7 +212,8 @@
             </div>
 
             <!-- BABAK IX: PALIHAN NAGARI (AKHIR MATARAM) -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="babak9">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-gray-900 rounded-full"></div>
                 <div class="ml-8 md:ml-12">
                     <span class="text-sm font-semibold text-gray-900 ml-6 md:ml-0">BABAK IX: PALIHAN NAGARI</span>
@@ -196,7 +229,8 @@
             </div>
 
             <!-- EPILOG -->
-            <div class="mb-12 relative">
+            <!-- 'timeline-card' dan 'data-target' BARU -->
+            <div class="mb-12 relative timeline-card" data-target="epilog">
                 <div class="absolute -left-[1.45rem] top-1 w-6 h-6 bg-amber-50 border-4 border-gray-500 rounded-full"></div>
                 <div class="ml-8 md:ml-12 p-6 bg-amber-50 rounded-lg shadow-lg">
                     <span class="text-sm font-semibold text-gray-500 uppercase">EPILOG</span>
@@ -207,98 +241,236 @@
                         Novel Mataram telah berakhir, namun warisannya hidup di dua jantung budaya Jawa.</p>
                 </div>
             </div>
+        
+        </div> <!-- Penutup timelineWrapper -->
 
-        </div> <!-- Akhir dari wrapper linimasa -->
     </main>
 
-    <!-- Tombol Mulai Kuis -->
+    <!-- Bagian Kuis (HILANG & DITAMBAHKAN KEMBALI) -->
     <section class="container mx-auto max-w-4xl p-4 md:p-8 text-center">
-        <button id="startQuizBtn" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-10 rounded-lg shadow-lg text-xl transition-transform transform hover:scale-105">
-            Mulai Kuis Sejarah
-        </button>
+        <div class="bg-white p-8 rounded-lg shadow-xl border-2 border-amber-300">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Uji Pemahaman Anda</h2>
+            <p class="text-lg text-gray-700 mb-6">Setelah menelusuri linimasa, buktikan pengetahuan Anda tentang Kisah Tiga Takhta. Kuis ini terdiri dari 20 soal HOTS dan akan berjalan dalam mode layar penuh.</p>
+            <button id="startQuizBtn" class="w-full md:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-10 rounded-lg shadow-lg transition-transform transform hover:scale-105 text-xl">
+                Mulai Kuis Sekarang
+            </button>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center py-10 text-gray-600 bg-amber-100 mt-12">
-        <p>Sebuah visualisasi sejarah berdasarkan narasi.</p>
-    </footer>
-
-    <!-- Modal: Informasi Pengguna -->
-    <div id="userInfoModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-40">
+    <!-- Modal: Info Pengguna (HILANG & DITAMBAHKAN KEMBALI) -->
+    <div id="userInfoModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
         <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
-            <h2 class="text-2xl font-bold mb-6 text-gray-900 text-center">Informasi Peserta</h2>
+            <h2 class="text-2xl font-bold mb-6 text-center text-gray-900">Masukkan Data Diri</h2>
             <form id="userInfoForm">
                 <div class="mb-4">
-                    <label for="userName" class="block text-sm font-bold text-gray-700 mb-2">Nama Lengkap:</label>
-                    <input type="text" id="userName" name="userName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    <label for="userName" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap:</label>
+                    <input type="text" id="userName" name="userName" class="w-full p-3 border border-gray-300 rounded-lg" required>
                 </div>
                 <div class="mb-6">
-                    <label for="userClass" class="block text-sm font-bold text-gray-700 mb-2">Kelas:</label>
-                    <input type="text" id="userClass" name="userClass" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    <label for="userClass" class="block text-sm font-medium text-gray-700 mb-1">Kelas/Instansi:</label>
+                    <input type="text" id="userClass" name="userClass" class="w-full p-3 border border-gray-300 rounded-lg" required>
                 </div>
-                <button id="submitInfoBtn" type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-lg transition-transform transform hover:scale-105">
-                    Mulai
+                <button id="submitInfoBtn" type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                    Mulai Kuis
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- Modal: Kuis -->
-    <div id="quizModal" class="hidden fixed inset-0 bg-amber-50 p-4 md:p-8 overflow-y-auto z-50">
-        <div class="container mx-auto max-w-3xl">
-            <div class="bg-white p-6 md:p-8 rounded-lg shadow-2xl">
-                <div class="flex justify-between items-center mb-4">
-                    <span id="questionCounter" class="text-sm font-semibold text-gray-600">Soal 1 dari 20</span>
-                    <span id="quizTimer" class="text-sm font-bold text-red-600"></span> <!-- Timer bisa ditambahkan di sini -->
+    <!-- Modal: Kuis Berlangsung (HILANG & DITAMBAHKAN KEMBALI) -->
+    <div id="quizModal" class="hidden fixed inset-0 bg-white p-4 md:p-8 z-50 overflow-y-auto">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header Kuis -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl md:text-2xl font-bold text-amber-600">Kuis Tiga Takhta</h2>
+                <div id="questionCounter" class="text-lg font-semibold text-gray-700">Soal 1 dari 20</div>
+            </div>
+            
+            <!-- Konten Soal -->
+            <div class="bg-amber-50 p-6 md:p-8 rounded-lg shadow-inner border border-amber-200">
+                <div id="questionText" class="text-lg md:text-xl font-medium text-gray-900 mb-6 min-h-[6rem]">
+                    Memuat soal...
                 </div>
-                
-                <h2 id="questionText" class="text-xl md:text-2xl font-bold text-gray-900 mb-6" style="line-height: 1.6;">
-                    Pertanyaan akan dimuat di sini...
-                </h2>
-                
                 <div id="optionsContainer" class="space-y-4">
-                    <!-- Opsi jawaban akan di-generate oleh JavaScript -->
+                    <!-- Opsi akan dimuat di sini oleh JavaScript -->
                 </div>
-                
-                <div class="mt-8 flex justify-between">
-                    <button id="prevQuestionBtn" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-6 rounded-lg shadow-lg text-base transition-transform transform hover:scale-105 hidden">
-                        Sebelumnya
-                    </button>
-                    <button id="nextQuestionBtn" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg text-base transition-transform transform hover:scale-105">
-                        Selanjutnya
-                    </button>
-                </div>
+            </div>
+
+            <!-- Navigasi Kuis -->
+            <div class="flex justify-between mt-8">
+                <button id="prevQuestionBtn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-8 rounded-lg shadow transition-transform transform hover:scale-105 hidden">
+                    Sebelumnya
+                </button>
+                <button id="nextQuestionBtn" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg shadow transition-transform transform hover:scale-105 ml-auto">
+                    Selanjutnya
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- Modal: Hasil Kuis -->
+    <!-- Modal: Hasil Kuis (HILANG & DITAMBAHKAN KEMBALI) -->
     <div id="resultModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-40">
         <div class="w-full max-w-lg">
             <!-- ID "resultCard" digunakan untuk tangkapan layar -->
             <div id="resultCard" class="bg-white p-8 rounded-lg shadow-2xl text-center">
                 <h2 class="text-3xl font-bold mb-4 text-gray-900">Kuis Selesai!</h2>
-                <p class="text-lg text-gray-700 mb-2">Hasil untuk:</p>
-                <p id="resultName" class="text-2xl font-bold text-amber-700"></p>
-                <p id="resultClass" class="text-md text-gray-600 mb-6"></p>
                 
-                <p class="text-lg text-gray-700 mb-2">Skor Akhir Anda:</p>
-                <h1 id="resultScore" class="text-7xl font-extrabold text-gray-900 mb-8">100</h1>
+                <div class="mb-6">
+                    <div id="resultName" class="text-2xl font-semibold text-amber-600">Nama Pengguna</div>
+                    <div id="resultClass" class="text-lg text-gray-600">Kelas/Instansi</div>
+                </div>
+                
+                <div class="my-8">
+                    <div class="text-sm font-semibold text-gray-500 uppercase">SKOR AKHIR</div>
+                    <div id="resultScore" class="text-8xl font-extrabold text-gray-900">100</div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-3">
+                    <button id="downloadBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                        Unduh Hasil (PNG)
+                    </button>
+                    <button id="waBtn" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                        Kirim ke WhatsApp
+                    </button>
+                </div>
             </div>
-            
-            <!-- Tombol-tombol di luar kartu hasil -->
-            <div class="mt-6 flex flex-col md:flex-row gap-4 justify-center">
-                <button id="downloadBtn" class="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-lg transition-transform transform hover:scale-105">
-                    Unduh Hasil (PNG)
-                </button>
-                <button id="waBtn" class="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-lg transition-transform transform hover:scale-105">
-                    Kirim Hasil
-                </button>
+        </div>
+    </div>
+
+    <!-- Modal: Rincian Linimasa (BARU) -->
+    <div id="detailsModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+            <!-- Header Modal -->
+            <div class="flex justify-between items-center mb-4 flex-shrink-0">
+                <h2 id="detailsTitle" class="text-2xl font-bold text-gray-900">Rincian Babak</h2>
+                <button id="closeDetailsBtn" class="text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
+            </div>
+            <!-- Konten Scrollable -->
+            <div id="detailsContent" class="prose max-w-none overflow-y-auto text-gray-700">
+                <!-- Konten rincian akan dimuat di sini oleh JavaScript -->
             </div>
         </div>
     </div>
 
     <script>
+    // --- BANK DATA RINCIAN LINIMASA (BARU) ---
+    const timelineDetails = {
+        prolog: {
+            title: "Prolog: Runtuhnya Sebuah Imperium",
+            content: `
+                <p>Kisah ini dimulai di ufuk senja. Imperium besar Majapahit, yang pernah menyatukan Nusantara, kini rapuh dan terengah-engah. Kekuatan internal melemah, dan di pesisir utara Jawa (Pasisiran), angin perubahan mulai berembus kencang. Angin itu membawa serta keyakinan baru: Islam.</p>
+                <p>Di antara para adipati pesisir yang gelisah, muncullah seorang tokoh karismatik, Raden Patah. Konon, ia adalah putra dari raja terakhir Majapahit, Brawijaya V, dengan seorang selir Tionghoa. Darah bangsawan dan semangat zaman baru mengalir dalam dirinya.</p>
+            `
+        },
+        babak1: {
+            title: "Babak I: Fajar di Bintoro (Berdirinya Demak)",
+            content: `
+                <p>Raden Patah, dengan dukungan para Wali Songo—guru spiritual dan arsitek sosial di tanah Jawa—mendirikan sebuah kadipaten baru di Bintoro, sebuah daerah rawa yang disulap menjadi pusat kekuatan. Inilah Kerajaan Demak.</p>
+                <p>Sekitar tahun 1500, Demak mendeklarasikan diri sebagai kerajaan Islam merdeka. Ini bukan sekadar kudeta politik; ini adalah revolusi budaya dan spiritual. Masjid Agung Demak yang ikonik dibangun sebagai pusatnya, simbol bahwa kiblat peradaban Jawa telah bergeser.</p>
+                <p>Raden Patah (Sultan Alam Akbar al-Fatah) memerintah dengan bijak, meletakkan fondasi. Ia digantikan oleh putranya, Pati Unus (Pangeran Sabrang Lor), seorang pejuang gagah berani yang memimpin armada besar untuk menantang Portugis di Malaka, meski berakhir dengan kegagalan.</p>
+                <p>Puncak keemasan Demak dicapai di bawah Sultan Trenggana. Ia adalah seorang ekspansionis ulung. Di bawah panjinya, Demak menaklukkan sisa-sisa kekuatan Majapahit di timur dan merebut pelabuhan strategis Sunda Kelapa (yang kemudian dinamai Jayakarta) di barat. Demak adalah penguasa mutlak Jawa.</p>
+            `
+        },
+        babak2: {
+            title: "Babak II: Tragedi dan Darah (Keruntuhan Demak)",
+            content: `
+                <p>Namun, seperti banyak kisah kekuasaan, ambisi besar seringkali berakhir tragis. Pada tahun 1546, saat memimpin pengepungan di Panarukan (Jawa Timur), Sultan Trenggana tewas terbunuh.</p>
+                <p>Kematiannya meninggalkan takhta yang panas dan kosong. Drama pun dimulai.</p>
+                <p>Putra Trenggana, Sunan Prawoto, naik takhta. Namun, ia dibayangi oleh dendam lama. Arya Penangsang, Adipati Jipang yang perkasa, merasa lebih berhak atas takhta. Ayah Penangsang telah dibunuh atas perintah Sunan Prawoto (atau pendukungnya) di masa lalu.</p>
+                <p>Jawa terbelah. Perang saudara yang brutal meletus. Arya Penangsang, dengan keris pusaka Kyai Setan Kober, membunuh Sunan Prawoto dan mengobarkan perang. Demak tenggelam dalam kekacauan.</p>
+            `
+        },
+        babak3: {
+            title: "Babak III: Munculnya Sang Penengah (Lahirnya Pajang)",
+            content: `
+                <p>Di tengah kekacauan ini, muncullah seorang tokoh dari pedalaman (bukan pesisir), Jaka Tingkir. Ia adalah menantu Sultan Trenggana dan Adipati di Pajang (dekat Solo sekarang). Jaka Tingkir adalah sosok yang berbeda: ahli strategi yang tenang, bukan pejuang yang meledak-ledak.</p>
+                <p>Untuk melawan Arya Penangsang yang sakti, Jaka Tingkir tidak maju sendiri. Ia mengadakan sayembara. Dua murid setianya, Ki Ageng Pemanahan dan Ki Penjawi, maju. Bersama putra angkat Jaka Tingkir (yang juga putra Ki Ageng Pemanahan), Sutawijaya, mereka menyusun siasat.</p>
+                <p>Dalam pertempuran yang legendaris, Arya Penangsang berhasil dikalahkan. Konon, Sutawijaya-lah yang memainkan peran kunci dalam menumbangkan Adipati Jipang itu.</p>
+                <p>Kemenangan ini menjadi akhir bagi Demak. Jaka Tingkir, sebagai pemenang dan ahli waris yang paling sah, memindahkan pusat kekuasaan. Ia memboyong pusaka-pusaka Demak dari Bintoro ke pedalaman, ke keraton barunya di Pajang. Ia mengambil gelar Sultan Hadiwijaya.</p>
+                <p>Era Demak telah resmi berakhir. Era Pajang dimulai.</p>
+            `
+        },
+        babak4: {
+            title: "Babak IV: Benih di Alas Mentaok (Cikal Bakal Mataram)",
+            content: `
+                <p>Sultan Hadiwijaya adalah raja yang pemurah. Ia menepati janjinya. Atas jasa mereka mengalahkan Arya Penangsang, Ki Penjawi diberi wilayah Pati.</p>
+                <p>Dan Ki Ageng Pemanahan? Ia diberi hadiah yang paling menentukan dalam sejarah Jawa. Ia dihadiahi sebidang tanah yang saat itu masih berupa hutan lebat dan angker di selatan Pajang, bernama Alas Mentaok (Hutan Mentaok).</p>
+                <p>Banyak yang mengira itu adalah "hadiah buangan", jauh dari pusat kuasa. Namun, Ki Ageng Pemanahan, dan terutama putranya yang ambisius, Sutawijaya, melihatnya sebagai takdir.</p>
+                <p>Mereka membabat hutan itu. Mereka membangun desa, lalu kadipaten. Mereka menamainya Mataram.</p>
+            `
+        },
+        babak5: {
+            title: "Babak V: Sang Arsitek (Panembahan Senopati)",
+            content: `
+                <p>Kisah kita berlanjut dengan Sutawijaya, yang kini bergelar Panembahan Senopati. Ia bukanlah raja yang duduk di singgasana yang sudah jadi. Ia adalah seorang arsitek yang membangun di atas puing-puing.</p>
+                <p>Masa pemerintahannya adalah kerja keras. Ia menghabiskan usianya untuk menyatukan kembali apa yang telah tercerai-berai. Satu per satu, para adipati pesisir dan penguasa Jawa Timur—yang merasa merdeka setelah runtuhnya Pajang—ia taklukkan. Ada yang melalui diplomasi, banyak yang melalui ujung tombak pusaka Kyai Plered.</p>
+                <p>Ini adalah babak yang penuh mistik. Legenda berbisik bahwa Senopati tak hanya mengandalkan tentara. Ia menjalin persekutuan spiritual dengan penguasa Laut Selatan, Kanjeng Ratu Kidul, yang berjanji bahwa keturunannya akan menguasai Jawa, selama mereka tetap menjaga garis takdir. Ia wafat (1701) setelah meletakkan fondasi yang kokoh, di atas darah dan doa, di Kotagede.</p>
+            `
+        },
+        babak6: {
+            title: "Babak VI: Puncak Segala Puncak (Sultan Agung)",
+            content: `
+                <p>Jika Senopati adalah arsitek, cucunya adalah sang kaisar. Sultan Agung Hanyokrokusumo (1613-1645). Inilah puncak dari segala puncak Mataram.</p>
+                <p>Sultan Agung adalah perpaduan sempurna: seorang prajurit yang brutal, negarawan yang visioner, dan seorang sufi yang taat.</p>
+                <p><strong>Sang Penakluk:</strong> Dalam novel ini, Sultan Agung adalah tokoh utamanya. Ia memimpin pasukannya sendiri. Satu per satu, musuh abadi Mataram di pesisir—Surabaya, Madura, Pasuruan—dihancurkannya. Ia berhasil melakukan apa yang gagal dilakukan Demak dan Pajang: menyatukan seluruh Jawa di bawah satu panji. Ia adalah bayangan Majapahit dalam jubah Islam.</p>
+                <p><strong>Sang Penantang:</strong> Namun, di ufuk barat, di sebuah pelabuhan kecil bernama Jayakarta yang telah direbut, kini berdiri sebuah benteng. Batavia. Di dalamnya, sekelompok pedagang asing yang angkuh dan bersenjata aneh, VOC (Kumpeni).</p>
+                <p><strong>Tragedi Batavia:</strong> Agung melihat mereka sebagai duri dalam daging. Dua kali (1628 dan 1629), ia mengirim puluhan ribu pasukan untuk menyerbu Batavia. Ini adalah adegan kolosal: lumbung padi dibakar, ribuan nyawa melayang di kedua sisi. Namun, teknologi, logistik, dan wabah penyakit mengalahkan keberanian. Agung gagal. Batavia bertahan.</p>
+                <p><strong>Warisan:</strong> Kecewa karena gagal mengusir Kumpeni, Agung mengalihkan energinya ke dalam. Ia menciptakan Kalender Jawa (Saka) yang ikonik, membangun makam agung di Imogiri, dan menetapkan standar budaya (tarian, bahasa, dan etiket) yang mendefinisikan Kejawen hingga hari ini. Ia wafat dalam kemegahan, meninggalkan imperium yang terbentang dari ujung barat ke ujung timur Jawa, namun dengan satu luka kecil yang menganga di Batavia.</p>
+            `
+        },
+        babak7: {
+            title: "Babak VII: Intrik dan Intervensi (Amangkurat I & Trunojoyo)",
+            content: `
+                <p>Setiap pendakian akan diikuti oleh penurunan. Dan bagi Mataram, penurunan itu curam dan berdarah. Tokoh antagonis dalam kisah ini adalah putra Sultan Agung sendiri: Amangkurat I.</p>
+                <p>Ia adalah kebalikan ayahnya. Jika Agung membangun dengan karisma, Amangkurat I memerintah dengan teror. Ia paranoid, kejam, dan tidak stabil.</p>
+                <p><strong>Plered Berdarah:</strong> Ia memindahkan keraton dari Kotagede ke Plered. Salah satu tindakan pertamanya? Membantai ribuan ulama yang ia curigai tidak setia. Ia juga, ironisnya, menjalin perjanjian damai dengan VOC, sesuatu yang tak pernah dilakukan ayahnya. Ia mengira itu akan mengamankan takhtanya. Ia salah besar.</p>
+                <p><strong>Sang Pemberontak:</strong> Kebencian terhadap Amangkurat I menyatukan musuh-musuhnya. Muncullah Trunojoyo, seorang pangeran dari Madura. Dengan bantuan para pejuang Makassar, ia mengobarkan pemberontakan dahsyat.</p>
+                <p><strong>Raja dalam Pelarian:</strong> Pemberontakan Trunojoyo begitu sukses sehingga ia berhasil menyerbu dan menjarah keraton Plered (1677). Amangkurat I, sang raja agung yang paranoid, harus melarikan diri dari istananya sendiri, terhina. Ia wafat dalam pelarian.</p>
+            `
+        },
+        babak8: {
+            title: "Babak VIII: Takhta yang Rapuh (Era Perang Saudara)",
+            content: `
+                <p>Putra Amangkurat I, Amangkurat II, naik takhta. Tapi ia naik takhta bukan karena kekuatannya sendiri. Ia naik takhta karena ia meminta bantuan VOC untuk mengalahkan Trunojoyo.</p>
+                <p>Inilah awal dari akhir. VOC bersedia membantu, tapi tidak gratis. Sebagai imbalan, Amangkurat II harus:</p>
+                <ul>
+                    <li>Memberikan konsesi dagang (monopoli).</li>
+                    <li>Membayar seluruh biaya perang yang dikeluarkan VOC.</li>
+                    <li>Mengizinkan VOC mendirikan garnisun di jantung Jawa.</li>
+                </ul>
+                <p>Mataram kini "berutang" pada Kumpeni. Keraton dipindahkan lagi ke Kartasura.</p>
+                <p>Babak ini adalah montase yang menyedihkan. Satu demi satu, raja-raja Mataram (Amangkurat II, Pakubuwono I, Amangkurat IV, Pakubuwono II) naik takhta, bukan hanya karena garis keturunan, tapi karena persetujuan dari Batavia.</p>
+                <p>Setiap kali ada pangeran yang tidak puas dengan keputusan raja (atau keputusan VOC), ia akan memberontak. Ini disebut Perang Suksesi Jawa (I, II, dan III). Kakak melawan adik, paman melawan keponakan. Dan siapa yang menjadi wasit? Siapa yang diuntungkan? VOC.</p>
+            `
+        },
+        babak9: {
+            title: "Babak IX: Palihan Nagari (Pecahnya Kerajaan)",
+            content: `
+                <p>Kita tiba di babak terakhir. Adegan klimaksnya bukanlah perang besar, tapi sebuah meja perundingan.</p>
+                <p>Raja saat itu, Pakubuwono II, adalah raja yang lemah. Pemberontakan terbesar meletus, dipicu oleh pembantaian orang Tionghoa di Batavia ("Geger Pecinan"). Pemberontakan ini menyatukan dua pangeran Mataram yang paling brilian dan berbahaya: Pangeran Mangkubumi (adik raja) dan Raden Mas Said (keponakan raja).</p>
+                <p>Mereka berdua menghancurkan pasukan kerajaan dan VOC. Mataram berada di ambang kehancuran total.</p>
+                <p>VOC, yang juga lelah berperang dan hampir bangkrut, menyadari bahwa mereka tidak bisa mengalahkan kedua pangeran ini sekaligus. Jadi, mereka melakukan politik andalan mereka: <strong>Divide et Impera (Pecah Belah dan Kuasai)</strong>.</p>
+                <p>VOC mendekati Pangeran Mangkubumi secara terpisah.</p>
+                <p><strong>Klimaks (1755): Perjanjian Giyanti</strong></p>
+                <p>Bayangkan sebuah pertemuan di Desa Giyanti. Di satu sisi, Pangeran Mangkubumi. Di sisi lain, perwakilan VOC dan Raja Mataram (kini Pakubuwono III).</p>
+                <p>Tidak ada lagi pertempuran. Hanya goresan pena di atas kertas.</p>
+                <p>Kertas itu menyatakan: Kerajaan Mataram Islam, yang didirikan oleh Panembahan Senopati dan dibesarkan oleh Sultan Agung, secara resmi dibelah menjadi dua.</p>
+                <ul>
+                    <li><strong>Kasunanan Surakarta Hadiningrat:</strong> Wilayah timur, tetap dipimpin oleh Pakubuwono III, beribukota di Solo.</li>
+                    <li><strong>Kasultanan Ngayogyakarta Hadiningrat:</strong> Wilayah barat, diberikan kepada Pangeran Mangkubumi, yang mengambil gelar Sultan Hamengkubuwono I, beribukota di Yogyakarta.</li>
+                </ul>
+                <p>(Beberapa tahun kemudian, Raden Mas Said juga menghentikan perlawanannya dan diberi sebidang kecil wilayah, menjadi Kadipaten Mangkunegaran).</p>
+            `
+        },
+        epilog: {
+            title: "Epilog: Dua Takhta, Satu Warisan",
+            content: `
+                <p>Novel ini berakhir di sini. Tidak ada lagi satu Mataram Islam. Yang ada adalah dua (lalu empat) kerajaan yang saling mengawasi, terikat oleh perjanjian, dan selamanya berada di bawah bayang-bayang kekuatan Eropa.</p>
+                <p>Imperium itu telah runtuh. Namun, darah dan budaya Mataram tetap hidup, mengalir di dua jantung kota yang berbeda: Solo dan Yogyakarta, hingga hari ini. Kisah takhta telah berakhir, namun kisah peradaban baru dimulai.</p>
+            `
+        }
+    };
+
     // --- BANK SOAL (50 SOAL HOTS) ---
     const quizData = [
         // DEMAK (BAB I & II)
@@ -877,6 +1049,13 @@
     const downloadBtn = document.getElementById('downloadBtn');
     const waBtn = document.getElementById('waBtn');
 
+    // --- ELEMEN DOM (BARU) ---
+    const timelineWrapper = document.getElementById('timelineWrapper');
+    const detailsModal = document.getElementById('detailsModal');
+    const detailsTitle = document.getElementById('detailsTitle');
+    const detailsContent = document.getElementById('detailsContent');
+    const closeDetailsBtn = document.getElementById('closeDetailsBtn');
+
     // --- FUNGSI FULLSCREEN ---
     const elem = document.documentElement;
     function openFullscreen() {
@@ -1141,8 +1320,49 @@ Skor: ${finalScore}`;
     document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
     document.addEventListener('msfullscreenchange', handleFullscreenChange);
 
+    // --- FUNGSI MODAL RINCIAN LINIMASA (BARU) ---
+
+    // Tampilkan modal saat kartu linimasa diklik
+    timelineWrapper.addEventListener('click', (e) => {
+        // Cari elemen '.timeline-card' terdekat dari elemen yang diklik
+        const card = e.target.closest('.timeline-card');
+        
+        if (!card) {
+            return; // Keluar jika yang diklik bukan bagian dari kartu
+        }
+
+        const target = card.dataset.target; // Ambil 'data-target' (cth: "prolog", "babak1")
+
+        if (target && timelineDetails[target]) {
+            const data = timelineDetails[target];
+            
+            // Isi konten modal
+            detailsTitle.innerText = data.title;
+            detailsContent.innerHTML = data.content;
+            
+            // Tampilkan modal
+            detailsModal.classList.remove('hidden');
+        }
+    });
+
+    // Fungsi untuk menutup modal rincian
+    function closeDetailsModal() {
+        detailsModal.classList.add('hidden');
+    }
+
+    // Tutup modal saat tombol 'x' diklik
+    closeDetailsBtn.addEventListener('click', closeDetailsModal);
+
+    // Tutup modal saat area di luar modal (latar belakang) diklik
+    detailsModal.addEventListener('click', (e) => {
+        if (e.target === detailsModal) {
+            closeDetailsModal();
+        }
+    });
+
 </script>
 
 </body>
 </html>
+
 
