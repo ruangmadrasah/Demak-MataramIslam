@@ -1104,11 +1104,47 @@
     // 3. Submit Info & Mulai Kuis
     userInfoForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        // Hapus pesan error sebelumnya jika ada
+        const oldError = document.getElementById('splitScreenError');
+        if (oldError) {
+            oldError.remove();
+        }
+
+        // --- CEK SPLIT SCREEN BARU ---
+        // Cek jika window tidak dimaksimalkan.
+        // Toleransi 100px untuk taskbar, dll.
+        const isWindowed = (window.outerWidth < (screen.availWidth - 100)) || (window.outerHeight < (screen.availHeight - 100));
+        
+        // Cek jika browser sudah dalam mode fullscreen manual (F11)
+        const isAlreadyFullscreen = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+
+        // Jika mode windowed (tidak maksimal) DAN tidak sedang fullscreen manual
+        if (isWindowed && !isAlreadyFullscreen) {
+            // Tampilkan pesan error di dalam modal
+            const errorMsg = document.createElement('p');
+            errorMsg.id = "splitScreenError";
+            errorMsg.className = "text-red-600 text-sm font-bold text-center mt-4";
+            errorMsg.innerText = "Mode split screen atau window terdeteksi.\nHarap maksimalkan window browser Anda dan coba lagi.";
+            
+            // Sisipkan errorMsg setelah tombol submit
+            submitInfoBtn.insertAdjacentElement('afterend', errorMsg);
+            return; // Hentikan eksekusi
+        }
+        // --- AKHIR CEK ---
+
         userName = document.getElementById('userName').value;
         userClass = document.getElementById('userClass').value;
         
         if (userName.trim() && userClass.trim()) {
             userInfoModal.classList.add('hidden');
+            
+            // Hapus error lagi saat berhasil (untuk pembersihan)
+            const errorElement = document.getElementById('splitScreenError');
+            if (errorElement) {
+                errorElement.remove();
+            }
+
             startQuiz();
         }
     });
@@ -1364,5 +1400,3 @@ Skor: ${finalScore}`;
 
 </body>
 </html>
-
-
